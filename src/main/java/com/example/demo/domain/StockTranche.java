@@ -9,6 +9,8 @@ import java.util.UUID;
 @lombok.NoArgsConstructor
 @lombok.AllArgsConstructor
 @lombok.Builder
+@lombok.Setter
+@lombok.Getter
 public class StockTranche {
 
     @Id
