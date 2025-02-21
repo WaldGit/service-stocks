@@ -83,8 +83,8 @@ public class DemoApplication {
             for (StockInvestment inv : investments) {
                 System.out.println("📈 Investment: " + inv);
 
-                double returnPercentage = returnCalculator.calculateInvestmentReturn(inv);
-                System.out.println("📊 Return for this investment: " + returnPercentage + "%");
+                InvestmentMetrics metrics  = returnCalculator.calculateInvestmentMetrics(inv);
+                System.out.println("📊 Return for this investment: " + metrics + "%");
 
 
                 // Access the list of tranches for this investment
