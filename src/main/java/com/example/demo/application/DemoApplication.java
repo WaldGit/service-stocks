@@ -34,6 +34,9 @@ public class DemoApplication {
     public org.springframework.boot.CommandLineRunner run(StockService stockService, PortfolioService portfolioService) {
         return args -> {
 
+              InvestmentReturnCalculator returnCalculator = new InvestmentReturnCalculator();
+
+
             // 1. Create a Portfolio
             Portfolio portfolio = Portfolio.builder()
                     .name("Tech Stocks Portfolio")
@@ -46,7 +49,7 @@ public class DemoApplication {
 // 2. Create a StockInvestment
             StockInvestment investment = StockInvestment.builder()
                     .ticker("AAPL")
-                    .currentPrice(175.50)
+                    .currentPrice(200.00)
                     .closed(false)
                     .closedDate(null)
                     .portfolio(portfolio) // Associate this investment with the portfolio
@@ -58,15 +61,15 @@ public class DemoApplication {
 
 // 3. Create StockTranches for this investment
             StockTranche tranche1 = StockTranche.builder()
-                    .quantity(10.0)
-                    .pricePerShare(170.00)
+                    .quantity(20.0)
+                    .pricePerShare(100.00)
                     .purchaseDate(LocalDate.now().minusDays(10))
                     .stock(investment)  // Associate this tranche with the investment
                     .build();
 
             StockTranche tranche2 = StockTranche.builder()
                     .quantity(20.0)
-                    .pricePerShare(172.00)
+                    .pricePerShare(200.00)
                     .purchaseDate(LocalDate.now().minusDays(5))
                     .stock(investment)  // Associate this tranche with the investment
                     .build();
@@ -79,6 +82,10 @@ public class DemoApplication {
             List<StockInvestment> investments = stockService.getAllStocksInvestements();
             for (StockInvestment inv : investments) {
                 System.out.println("📈 Investment: " + inv);
+
+                double returnPercentage = returnCalculator.calculateInvestmentReturn(inv);
+                System.out.println("📊 Return for this investment: " + returnPercentage + "%");
+
 
                 // Access the list of tranches for this investment
                 java.util.List<StockTranche> tranches = inv.getTranches();
