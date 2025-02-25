@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -22,7 +23,7 @@ public class PortfolioService {
         return portfolioRepository.save(portfolio);
     }
 
-    public List<Portfolio> getAllPortfolios() {
+    public List<Portfolio> findAll() {
         return portfolioRepository.findAll();
     }
 
@@ -51,5 +52,10 @@ public class PortfolioService {
         // Save the portfolio, stock investments, and tranches to the database
         portfolioRepository.save(portfolio);
     }
+
+    public Optional<Portfolio> findById(UUID id) {
+        return portfolioRepository.findById(id);
+    }
+
 }
 
