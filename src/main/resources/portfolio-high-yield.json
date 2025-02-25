@@ -1,29 +1,29 @@
 {
-        "name": "High Yield Portfolio",
-                "stockInvestments": [
-                {
-                        "ticker": "MRK",
-                        "currentPrice": 88.05,
-                        "tranches": [
-                        {
-                                "pricePerShare": 98,
-                                "purchaseDate": "2025-01-27"
-                        },
-                        {
-                                "pricePerShare": 96.24,
-                                "purchaseDate": "2025-01-21"
-                        },
-                                {
-                                        "pricePerShare": 99.37,
-                                        "purchaseDate": "2024-12-23"
-                                },
-                                {
-                                        "pricePerShare": 101.16,
-                                        "purchaseDate": "2024-11-25"
-                                }
-                        ],
-                        "closed": true,
-                        "closedDate":  "2025-02-10"
-                }
-                ]
+  "name": "High Yield Portfolio",
+  "stockInvestments": [
+    {
+      "ticker": "MRK",
+      "currentPrice": 88.05,
+      "tranches": [
+        {
+          "pricePerShare": 98,
+          "purchaseDate": "2025-01-27"
+        },
+        {
+          "pricePerShare": 96.24,
+          "purchaseDate": "2025-01-21"
+        },
+        {
+          "pricePerShare": 99.37,
+          "purchaseDate": "2024-12-23"
+        },
+        {
+          "pricePerShare": 101.16,
+          "purchaseDate": "2024-11-25"
+        }
+      ],
+      "closed": true,
+      "closedDate": "2025-02-10"
+    }
+  ]
 }
