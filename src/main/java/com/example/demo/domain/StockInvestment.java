@@ -1,22 +1,25 @@
 package com.example.demo.domain;
 
 import jakarta.persistence.*;
+import lombok.*;
+import org.hibernate.annotations.GenericGenerator;
+
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
 @Entity
 @Table(name = "stock_investments")
-@lombok.Getter
-@lombok.Setter
-@lombok.NoArgsConstructor
-@lombok.AllArgsConstructor
-@lombok.Builder
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class StockInvestment {
 
-
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO) // or UUID generator
+    @GeneratedValue(strategy = GenerationType.UUID) // ✅ Correct way to handle UUID in Hibernate 6+
     private UUID id;
 
     private String ticker;
@@ -25,14 +28,11 @@ public class StockInvestment {
     private LocalDate closedDate;
 
     @ManyToOne
-    @JoinColumn(name = "portfolio_id", nullable = false)  // Foreign key to Portfolio
+    @JoinColumn(name = "portfolio_id", nullable = false)  // ✅ Foreign key to Portfolio
     private Portfolio portfolio;
 
-    @OneToMany(mappedBy = "stock", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<StockTranche> tranches;
-
-    // Getters & Setters
-
+    @OneToMany(mappedBy = "stock", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
+    private List<StockTranche> tranches = new ArrayList<>(); // ✅ Initialize to avoid NullPointerException
 
     @Override
     public String toString() {
@@ -42,7 +42,6 @@ public class StockInvestment {
                 ", currentPrice=" + currentPrice +
                 ", closed=" + closed +
                 ", closedDate=" + closedDate +
-
-                '}';
+                '}'; // ✅ Removed 'tranches' to prevent LazyInitializationException
     }
 }

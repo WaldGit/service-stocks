@@ -33,5 +33,23 @@ public class PortfolioService {
     public void deletePortfolio(UUID id) {
         portfolioRepository.deleteById(id);
     }
+
+    public void processAndSavePortfolio(Portfolio portfolio) {
+        // Define the amount to invest in each tranche (500 EUR in this example)
+        double totalInvestmentAmount = 500;
+
+        // Loop through each stock investment
+        for (com.example.demo.domain.StockInvestment stockInvestment : portfolio.getStockInvestments()) {
+            // Loop through each tranche
+            for (com.example.demo.domain.StockTranche tranche : stockInvestment.getTranches()) {
+                // Calculate the quantity for each tranche
+                int quantity = (int) (totalInvestmentAmount / tranche.getPricePerShare());
+                tranche.setQuantity(quantity); // Set the calculated quantity
+            }
+        }
+
+        // Save the portfolio, stock investments, and tranches to the database
+        portfolioRepository.save(portfolio);
+    }
 }
 

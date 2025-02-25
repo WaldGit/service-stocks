@@ -48,6 +48,12 @@
 			<version>2.1.0</version>
 		</dependency>
 
+		<!-- Jackson dependency for JSON parsing (Spring Boot includes this by default) -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+		</dependency>
+
 		<!-- Lombok (for cleaner Java code) -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
