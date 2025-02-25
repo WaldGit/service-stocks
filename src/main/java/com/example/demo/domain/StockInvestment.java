@@ -1,5 +1,6 @@
 package com.example.demo.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
@@ -27,8 +28,9 @@ public class StockInvestment {
     private boolean closed;
     private LocalDate closedDate;
 
-    @ManyToOne
-    @JoinColumn(name = "portfolio_id", nullable = false)  // ✅ Foreign key to Portfolio
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "portfolio_id", nullable = false)
+    @JsonIgnore
     private Portfolio portfolio;
 
     @OneToMany(mappedBy = "stock", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)

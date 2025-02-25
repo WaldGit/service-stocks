@@ -1,5 +1,6 @@
 package com.example.demo.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.util.UUID;
@@ -23,7 +24,8 @@ public class StockTranche {
     private Double transactionCost;
     private Double percentageGain;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnore
     @JoinColumn(name = "stocktranch_id", nullable = false) // ✅ This correctly maps to StockInvestment
     private StockInvestment stock;
 
