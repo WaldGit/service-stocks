@@ -163,6 +163,7 @@ public class DemoApplication {
                 StockTranche clonedTranche = new StockTranche();
                 clonedTranche.setStock(clonedInvestment); // ✅ Associate with cloned StockInvestment
                 clonedTranche.setPricePerShare(originalTranche.getPricePerShare());
+                clonedTranche.setPurchaseDate(originalTranche.getPurchaseDate());
 
                 // ✅ Calculate new quantity (500 EUR per tranche)
                 double quantity = 500.0 / clonedTranche.getPricePerShare();

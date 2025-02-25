@@ -24,6 +24,35 @@
       ],
       "closed": true,
       "closedDate": "2025-02-10"
+    },
+    {
+      "ticker": "BMY",
+      "currentPrice": 57.88,
+      "tranches": [
+        { "pricePerShare": 49.28, "purchaseDate": "2024-09-10" },
+        { "pricePerShare": 49.49, "purchaseDate": "2024-09-17" },
+        { "pricePerShare": 49.41, "purchaseDate": "2024-09-20" },
+        { "pricePerShare": 50.94, "purchaseDate": "2024-09-24" },
+        { "pricePerShare": 53.44, "purchaseDate": "2024-10-07" },
+        { "pricePerShare": 52.67, "purchaseDate": "2024-10-13" },
+        { "pricePerShare": 52.12, "purchaseDate": "2024-10-20" },
+        { "pricePerShare": 52.64, "purchaseDate": "2024-10-27" },
+        { "pricePerShare": 55.45, "purchaseDate": "2024-11-03" },
+        { "pricePerShare": 59.82, "purchaseDate": "2024-11-10" },
+        { "pricePerShare": 56.8, "purchaseDate": "2024-11-17" },
+        { "pricePerShare": 58.78, "purchaseDate": "2024-11-25" },
+        { "pricePerShare": 56.28, "purchaseDate": "2024-12-02" },
+        { "pricePerShare": 56.28, "purchaseDate": "2024-12-09" },
+        { "pricePerShare": 55.87, "purchaseDate": "2024-12-16" },
+        { "pricePerShare": 57.58, "purchaseDate": "2024-12-23" },
+        { "pricePerShare": 56.06, "purchaseDate": "2024-12-30" },
+        { "pricePerShare": 55.36, "purchaseDate": "2025-01-13" },
+        { "pricePerShare": 57.04, "purchaseDate": "2025-01-21" },
+        { "pricePerShare": 60.64, "purchaseDate": "2025-01-27" },
+        { "pricePerShare": 59.95, "purchaseDate": "2025-02-03" }
+      ],
+      "closed": false,
+      "closedDate": "2025-02-10"
     }
   ]
 }
