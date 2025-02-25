@@ -53,6 +53,78 @@
       ],
       "closed": false,
       "closedDate": "2025-02-10"
+    },
+    {
+      "ticker": "PEP",
+      "currentPrice": 153.85,
+      "tranches": [
+        { "pricePerShare": 154.54, "purchaseDate": "2025-01-27" },
+        { "pricePerShare": 148.55, "purchaseDate": "2025-01-21" },
+        { "pricePerShare": 144.5, "purchaseDate": "2025-01-13" },
+        { "pricePerShare": 146.27, "purchaseDate": "2025-01-06" },
+        { "pricePerShare": 151.72, "purchaseDate": "2024-12-30" },
+        { "pricePerShare": 151.29, "purchaseDate": "2024-12-23" },
+        { "pricePerShare": 156.02, "purchaseDate": "2024-12-16" },
+        { "pricePerShare": 159.47, "purchaseDate": "2024-12-09" },
+        { "pricePerShare": 163.05, "purchaseDate": "2024-12-02" },
+        { "pricePerShare": 167.21, "purchaseDate": "2024-10-07" },
+        { "pricePerShare": 144.35, "purchase": "2025-02-10" }
+      ],
+      "closed": false,
+      "closedDate": "2025-02-10"
+    },
+    {
+      "ticker": "SONY",
+      "currentPrice": 24.8,
+      "tranches": [
+        { "pricePerShare": 20.925, "purchaseDate": "2025-01-27" },
+        { "pricePerShare": 20.9, "purchaseDate": "2025-01-21" },
+        { "pricePerShare": 20.21, "purchaseDate": "2025-01-13" },
+        { "pricePerShare": 19.37, "purchaseDate": "2024-12-23" }
+      ],
+      "closed": false,
+      "closedDate": "2025-02-10"
+    },
+    {
+      "ticker": "PNC",
+      "currentPrice": 186.96,
+      "tranches": [
+        { "pricePerShare": 201.45, "purchaseDate": "2025-01-28" },
+        { "pricePerShare": 198.56, "purchaseDate": "2025-01-21" },
+        { "pricePerShare": 192.43, "purchaseDate": "2025-01-13" },
+        { "pricePerShare": 195.59, "purchaseDate": "2025-01-06" },
+        { "pricePerShare": 192.53, "purchaseDate": "2024-12-30" },
+        { "pricePerShare": 200.53, "purchaseDate": "2024-12-16" },
+        { "pricePerShare": 206.83, "purchaseDate": "2024-11-17" },
+        { "pricePerShare": 209.71, "purchaseDate": "2024-11-10" },
+        { "pricePerShare": 185.62, "purchaseDate": "2024-11-03" },
+        { "pricePerShare": 189.83, "purchaseDate": "2024-10-27" },
+        { "pricePerShare": 185.64, "purchaseDate": "2024-10-20" },
+        { "pricePerShare": 183.37, "purchaseDate": "2024-10-13" },
+        { "pricePerShare": 182.23, "purchaseDate": "2024-10-07" },
+        { "pricePerShare": 197.64, "purchaseDate": "2025-02-03" }
+      ],
+      "closed": false,
+      "closedDate": "2025-02-10"
+    },
+    {
+      "ticker": "UPS",
+      "currentPrice": 116.16,
+      "tranches": [
+        { "pricePerShare": 136.61, "purchaseDate": "2025-01-27" },
+        { "pricePerShare": 132.87, "purchaseDate": "2025-01-21" },
+        { "pricePerShare": 125.01, "purchaseDate": "2025-01-13" },
+        { "pricePerShare": 124.21, "purchaseDate": "2025-01-06" },
+        { "pricePerShare": 125.32, "purchaseDate": "2024-12-30" },
+        { "pricePerShare": 125.75, "purchaseDate": "2024-12-23" },
+        { "pricePerShare": 128.55, "purchaseDate": "2024-12-16" },
+        { "pricePerShare": 128.53, "purchaseDate": "2024-12-09" },
+        { "pricePerShare": 135.13, "purchaseDate": "2024-11-17" },
+        { "pricePerShare": 111.29, "purchaseDate": "2025-02-03" },
+        { "pricePerShare": 114.16, "purchaseDate": "2025-02-10" }
+      ],
+      "closed": false,
+      "closedDate": "2025-02-10"
     }
   ]
 }
