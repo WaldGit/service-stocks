@@ -3,7 +3,6 @@ package com.example.demo.application;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springdoc.core.models.GroupedOpenApi;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @Configuration
@@ -14,7 +13,8 @@ public class SwaggerConfig {
     public GroupedOpenApi api() {
         return GroupedOpenApi.builder()
                 .group("default")
-                .pathsToMatch("/students/**")
+                .pathsToMatch("/api/**") // ✅ Include all API endpoints
                 .build();
     }
 }
+
