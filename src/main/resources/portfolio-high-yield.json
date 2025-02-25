@@ -102,7 +102,8 @@
         { "pricePerShare": 185.64, "purchaseDate": "2024-10-20" },
         { "pricePerShare": 183.37, "purchaseDate": "2024-10-13" },
         { "pricePerShare": 182.23, "purchaseDate": "2024-10-07" },
-        { "pricePerShare": 197.64, "purchaseDate": "2025-02-03" }
+        { "pricePerShare": 197.64, "purchaseDate": "2025-02-03" },
+        { "pricePerShare": 186.96, "purchaseDate": "2025-02-24" }
       ],
       "closed": false,
       "closedDate": "2025-02-10"
@@ -336,6 +337,24 @@
       "currentPrice": 247.75,
       "tranches": [
         { "pricePerShare": 247.75, "purchaseDate": "2025-02-24" }
+      ],
+      "closed": false,
+      "closedDate": "2025-02-10"
+    },
+    {
+      "ticker": "TGT",
+      "currentPrice": 125.77,
+      "tranches": [
+        { "pricePerShare": 125.77, "purchaseDate": "2025-02-24" }
+      ],
+      "closed": false,
+      "closedDate": "2025-02-10"
+    },
+    {
+      "ticker": "HII",
+      "currentPrice": 168.81,
+      "tranches": [
+        { "pricePerShare": 168.81, "purchaseDate": "2025-02-24" }
       ],
       "closed": false,
       "closedDate": "2025-02-10"
