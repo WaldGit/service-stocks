@@ -49,53 +49,9 @@ public class DemoApplication {
 
             // Print a message to confirm that the data was loaded
             System.out.println("Portfolio data has been successfully processed and saved.");
-
-
             InvestmentReturnCalculator returnCalculator = new InvestmentReturnCalculator();
 
-/*
-            // 1. Create a Portfolio
-            Portfolio portfolio = Portfolio.builder()
-                    .name("Tech Stocks Portfolio")
-                    .build();
-
-// Save the Portfolio
-            portfolio = portfolioService.save(portfolio);
-            System.out.println("✅ Created Portfolio: " + portfolio);
-
-// 2. Create a StockInvestment
-            StockInvestment investment = StockInvestment.builder()
-                    .ticker("AAPL")
-                    .currentPrice(200.00)
-                    .closed(false)
-                    .closedDate(null)
-                    .portfolio(portfolio) // Associate this investment with the portfolio
-                    .build();
-
-// Save the StockInvestment
-            investment = stockService.save(investment);
-            System.out.println("✅ Created Investment: " + investment);
-
-// 3. Create StockTranches for this investment
-            StockTranche tranche1 = StockTranche.builder()
-                    .quantity(20.0)
-                    .pricePerShare(100.00)
-                    .purchaseDate(LocalDate.now().minusDays(10))
-                    .stock(investment)  // Associate this tranche with the investment
-                    .build();
-
-            StockTranche tranche2 = StockTranche.builder()
-                    .quantity(20.0)
-                    .pricePerShare(200.00)
-                    .purchaseDate(LocalDate.now().minusDays(5))
-                    .stock(investment)  // Associate this tranche with the investment
-                    .build();
-
-// Save all tranches
-            stockService.saveAll(List.of(tranche1, tranche2));
-            System.out.println("✅ Added Tranches: " + tranche1 + ", " + tranche2);*/
-
-// 4. Fetch and print all investments with their tranches
+            // 4. Fetch and print all investments with their tranches
             List<StockInvestment> investments = stockService.getAllStocksInvestements();
             for (StockInvestment inv : investments) {
                 System.out.println("📈 Investment: " + inv);
