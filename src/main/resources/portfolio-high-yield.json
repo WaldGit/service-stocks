@@ -125,6 +125,209 @@
       ],
       "closed": false,
       "closedDate": "2025-02-10"
+    },
+    {
+      "ticker": "MCHP",
+      "currentPrice": 60.83,
+      "tranches": [
+        { "pricePerShare": 57.31, "purchaseDate": "2025-01-27" },
+        { "pricePerShare": 57.12, "purchaseDate": "2024-12-30" },
+        { "pricePerShare": 61.87, "purchaseDate": "2024-12-09" },
+        { "pricePerShare": 52.26, "purchaseDate": "2025-02-03" }
+      ],
+      "closed": false,
+      "closedDate": "2025-02-10"
+    },
+    {
+      "ticker": "AMT",
+      "currentPrice": 192,
+      "tranches": [
+        { "pricePerShare": 191.51, "purchaseDate": "2025-01-27" },
+        { "pricePerShare": 176.94, "purchaseDate": "2025-01-13" },
+        { "pricePerShare": 181.92, "purchaseDate": "2024-12-30" },
+        { "pricePerShare": 185.37, "purchaseDate": "2025-02-03" }
+      ],
+      "closed": false,
+      "closedDate": "2025-02-10"
+    },
+    {
+      "ticker": "AMGN",
+      "currentPrice": 309.72,
+      "tranches": [
+        { "pricePerShare": 270.19, "purchaseDate": "2025-01-13" }
+      ],
+      "closed": false,
+      "closedDate": "2025-02-10"
+    },
+    {
+      "ticker": "GILD",
+      "currentPrice": 111.03,
+      "tranches": [
+        { "pricePerShare": 89.84, "purchaseDate": "2025-01-13" },
+        { "pricePerShare": 92.05, "purchaseDate": "2024-12-16" },
+        { "pricePerShare": 90.59, "purchaseDate": "2024-12-09" },
+        { "pricePerShare": 94.02, "purchaseDate": "2024-12-02" },
+        { "pricePerShare": 90.48, "purchaseDate": "2024-11-25" }
+      ],
+      "closed": false,
+      "closedDate": "2025-02-10"
+    },
+    {
+      "ticker": "GILD",
+      "currentPrice": 90.03,
+      "tranches": [
+      ],
+      "closed": true,
+      "closedDate": "2025-02-10"
+    },
+    {
+      "ticker": "PM",
+      "currentPrice": 156.28,
+      "tranches": [
+        { "pricePerShare": 121,"purchaseDate": "2025-01-06" }
+      ],
+      "closed": true,
+      "closedDate": "2025-02-10"
+    },
+    {
+      "ticker": "DEO",
+      "currentPrice": 110.27,
+      "tranches": [
+        { "pricePerShare": 125.32, "purchaseDate": "2025-01-06" }
+      ],
+      "closed": true,
+      "closedDate": "2025-02-10"
+    },
+    {
+      "ticker": "ABBV",
+      "currentPrice": 204.08,
+      "tranches": [
+        { "pricePerShare": 180.1, "purchaseDate": "2025-01-06" }
+      ],
+      "closed": false,
+      "closedDate": "2025-02-10"
+    },
+    {
+      "ticker": "CMCSA",
+      "currentPrice": 204.08,
+      "tranches": [
+        { "pricePerShare": 37.49, "purchaseDate": "2025-01-06" },
+        { "pricePerShare": 33.19, "purchaseDate": "2025-02-03" },
+        { "pricePerShare": 34.47, "purchaseDate": "2025-02-10" }
+      ],
+      "closed": false,
+      "closedDate": "2025-02-10"
+    },
+    {
+      "ticker": "LYB",
+      "currentPrice": 77.31,
+      "tranches": [
+        { "pricePerShare": 73.86, "purchaseDate": "2025-01-06" },
+        { "pricePerShare": 74.68, "purchaseDate": "2024-12-16" },
+
+        { "pricePerShare": 84.02, "purchaseDate": "2024-11-25" },
+        { "pricePerShare": 83.2, "purchaseDate": "2024-11-17" },
+        { "pricePerShare": 84.97, "purchaseDate": "2024-11-10" },
+        { "pricePerShare": 87.72, "purchaseDate": "2024-10-27" }
+      ],
+      "closed": false,
+      "closedDate": "2025-02-10"
+    },
+    {
+      "ticker": "CVS",
+      "currentPrice": 63.02,
+      "tranches": [
+        { "pricePerShare": 43.94, "purchaseDate": "2024-12-30" },
+        { "pricePerShare": 44.14, "purchaseDate": "2024-12-23" },
+        { "pricePerShare": 46.6, "purchaseDate": "2024-12-16" },
+        { "pricePerShare": 56.07, "purchaseDate": "2024-12-09" },
+        { "pricePerShare": 59.08, "purchaseDate": "2024-12-02" },
+        { "pricePerShare": 60.08, "purchaseDate": "2024-11-25" },
+        { "pricePerShare": 54.65, "purchaseDate": "2024-11-03" },
+        { "pricePerShare": 57.36, "purchaseDate": "2024-10-27" },
+        { "pricePerShare": 65.25, "purchaseDate": "2024-10-07" },
+        { "pricePerShare": 58.08, "purchaseDate": "2024-09-24" }
+      ],
+      "closed": false,
+      "closedDate": "2025-02-10"
+    },{
+      "ticker": "JNJ",
+      "currentPrice": 63.02,
+      "tranches": [
+        { "pricePerShare": 154.8, "purchaseDate": "2024-12-02" }
+      ],
+      "closed": false,
+      "closedDate": "2025-02-10"
+    }
+  ,{
+      "ticker": "GSK",
+      "currentPrice": 37.08,
+      "tranches": [
+        { "pricePerShare": 34.31, "purchaseDate": "2024-12-02" },
+        { "pricePerShare": 36.47, "purchaseDate": "2025-02-10" }
+      ],
+      "closed": false,
+      "closedDate": "2025-02-10"
+    },
+    {
+      "ticker": "AMX",
+      "currentPrice": 14.49,
+      "tranches": [
+        { "pricePerShare": 14.81, "purchaseDate": "2024-11-25" }
+      ],
+      "closed": false,
+      "closedDate": "2025-02-10"
+    },
+    {
+      "ticker": "CVX",
+      "currentPrice": 157.89,
+      "tranches": [
+        { "pricePerShare": 156.5, "purchaseDate": "2024-11-25" },
+        { "pricePerShare": 150.88, "purchaseDate": "2024-10-20" },
+        { "pricePerShare": 151.78, "purchaseDate": "2024-10-13" },
+        { "pricePerShare": 147.45, "purchaseDate": "2024-09-24" },
+        { "pricePerShare": 145.68, "purchaseDate": "2024-09-20" },
+        { "pricePerShare": 143.41, "purchaseDate": "2024-09-17" },
+        { "pricePerShare": 138.32, "purchaseDate": "2024-09-10" }
+      ],
+      "closed": false,
+      "closedDate": "2025-02-10"
+    },
+    {
+      "ticker": "DINO",
+      "currentPrice": 36.92,
+      "tranches": [
+        { "pricePerShare": 42.43, "purchaseDate": "2024-11-10" },
+        { "pricePerShare": 38.7, "purchaseDate": "2024-11-03" },
+        { "pricePerShare": 42.88, "purchaseDate": "2024-10-27" },
+        { "pricePerShare": 43.91, "purchaseDate": "2024-10-20" },
+        { "pricePerShare": 45.24, "purchaseDate": "2024-10-13" },
+        { "pricePerShare": 46.77, "purchaseDate": "2024-10-07" }
+      ],
+      "closed": false,
+      "closedDate": "2025-02-10"
+    },
+    {
+      "ticker": "PFE",
+      "currentPrice": 26.65,
+      "tranches": [
+        { "pricePerShare": 27.76, "purchaseDate": "2024-11-03" },
+        { "pricePerShare": 28.86, "purchaseDate": "2024-10-27" },
+        { "pricePerShare": 28.93, "purchaseDate": "2024-10-20" },
+        { "pricePerShare": 29.08, "purchaseDate": "2024-10-13" },
+        { "pricePerShare": 29.2, "purchaseDate": "2024-10-07" }
+      ],
+      "closed": false,
+      "closedDate": "2025-02-10"
+    },
+    {
+      "ticker": "BEN",
+      "currentPrice": 20.12,
+      "tranches": [
+
+      ],
+      "closed": true,
+      "closedDate": "2025-02-10"
     }
   ]
 }
