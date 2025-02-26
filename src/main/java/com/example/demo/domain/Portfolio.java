@@ -21,6 +21,9 @@ public class Portfolio {
 
     private String name;
 
+    @Transient
+    private Double totalGainLoss;
+
     @OneToMany(mappedBy = "portfolio", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<StockInvestment> stockInvestments = new ArrayList<>();
 

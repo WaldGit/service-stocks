@@ -72,14 +72,20 @@ public class PortfolioService {
         Portfolio portfolio = portfolioRepository.findById(portfolioId)
                 .orElseThrow(() -> new RuntimeException("Portfolio not found"));
 
+        double totalPortfolioGain = 0.0;
+
         // Iterate through all the stock investments and calculate metrics for each
         for (StockInvestment investment : portfolio.getStockInvestments()) {
             InvestmentMetricsDTO metrics = calculateInvestmentMetrics(investment);
             investment.setMetrics(metrics); // Store metrics on the investment (if needed)
+            totalPortfolioGain += metrics.getTotalGainLoss();
         }
 
+        portfolio.setTotalGainLoss(totalPortfolioGain); // Store total gain/loss in portfolio
+
+
         System.out.println("-----------------------");
-        System.out.println(portfolio);
+        System.out.println(portfolio.getTotalGainLoss());
 
         // Return portfolio with investment metrics included
         return portfolio;
