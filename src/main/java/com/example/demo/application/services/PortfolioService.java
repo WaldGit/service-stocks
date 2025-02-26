@@ -4,6 +4,7 @@ import com.example.demo.adapters.out.PortfolioRepository;
 import com.example.demo.domain.InvestmentMetricsDTO;
 import com.example.demo.domain.Portfolio;
 import com.example.demo.domain.StockInvestment;
+import com.example.demo.domain.StockTranche;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -85,36 +86,38 @@ public class PortfolioService {
     }
 
     public InvestmentMetricsDTO calculateInvestmentMetrics(StockInvestment investment) {
-        double totalGain = 0.0;
+        double totalGainLoss = 0.0;
         double totalInvestment = 0.0;
         double totalShares = 0.0;
         double totalPrice = 0.0;
 
-        // Iterate over all tranches of the investment
-        for (com.example.demo.domain.StockTranche tranche : investment.getTranches()) {
-            double gain = (investment.getCurrentPrice() - tranche.getPricePerShare()) * tranche.getQuantity();
-            totalGain += gain;
+        for (StockTranche tranche : investment.getTranches()) {
+            // Calculate gain/loss for the tranche
+            double gainLoss = (investment.getCurrentPrice() - tranche.getPricePerShare()) * tranche.getQuantity();
+            totalGainLoss += gainLoss;
+
+            // Total investment amount
             totalInvestment += tranche.getPricePerShare() * tranche.getQuantity();
+
+            // Total number of shares
             totalShares += tranche.getQuantity();
+
+            // Total price paid for all shares
             totalPrice += tranche.getPricePerShare() * tranche.getQuantity();
 
-            // Calculate percentage gain for each tranche
+            // Calculate percentage gain for the tranche
             double percentageGain = ((investment.getCurrentPrice() - tranche.getPricePerShare()) / tranche.getPricePerShare()) * 100;
-            tranche.setPercentageGain(percentageGain);  // Set the percentage gain for this tranche
+            tranche.setPercentageGain(percentageGain);
         }
 
-        // If total investment is 0, return 0% return (avoid division by zero)
-        if (totalInvestment == 0) {
-            return new InvestmentMetricsDTO(0.0, totalShares, 0.0, 0.0);
-        }
+        // Avoid division by zero
+        double returnPercentage = (totalInvestment == 0) ? 0.0 : (totalGainLoss / totalInvestment) * 100;
+        double averagePricePerShare = (totalShares == 0) ? 0.0 : totalPrice / totalShares;
 
-        // Calculate the overall return as a percentage
-        double returnPercentage = (totalGain / totalInvestment) * 100;
-        double averagePricePerShare = totalPrice / totalShares;
-
-        // Return the investment metrics as a DTO
-        return new InvestmentMetricsDTO(returnPercentage, totalShares, averagePricePerShare, totalPrice);
+        // Return the updated metrics
+        return new InvestmentMetricsDTO(returnPercentage, totalShares, averagePricePerShare, totalPrice, totalGainLoss);
     }
+
 
 }
 
