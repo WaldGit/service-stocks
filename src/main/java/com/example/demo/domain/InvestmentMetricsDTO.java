@@ -9,4 +9,5 @@ public class InvestmentMetricsDTO {
     private double averagePricePerShare;
     private double totalPrice;
     private double totalGainLoss;
+    private double allocationPercentage;
 }

@@ -72,24 +72,34 @@ public class PortfolioService {
         Portfolio portfolio = portfolioRepository.findById(portfolioId)
                 .orElseThrow(() -> new RuntimeException("Portfolio not found"));
 
-        double totalPortfolioGain = 0.0;
+        double totalPortfolioInvestment = 0.0;
 
-        // Iterate through all the stock investments and calculate metrics for each
+        // First, calculate the total portfolio investment
         for (StockInvestment investment : portfolio.getStockInvestments()) {
             InvestmentMetricsDTO metrics = calculateInvestmentMetrics(investment);
-            investment.setMetrics(metrics); // Store metrics on the investment (if needed)
-            totalPortfolioGain += metrics.getTotalGainLoss();
+            investment.setMetrics(metrics);
+            totalPortfolioInvestment += metrics.getTotalPrice(); // Sum total invested amount
         }
 
-        portfolio.setTotalGainLoss(totalPortfolioGain); // Store total gain/loss in portfolio
+        double totalGainLoss = 0.0;
 
+        // Now, calculate the % allocation for each investment
+        for (StockInvestment investment : portfolio.getStockInvestments()) {
+            InvestmentMetricsDTO metrics = investment.getMetrics();
+            if (totalPortfolioInvestment > 0) {
+                double allocation = (metrics.getTotalPrice() / totalPortfolioInvestment) * 100;
+                metrics.setAllocationPercentage(allocation); // ✅ Store % allocation
+            } else {
+                metrics.setAllocationPercentage(0.0);
+            }
+            totalGainLoss += metrics.getTotalGainLoss();
+        }
 
-        System.out.println("-----------------------");
-        System.out.println(portfolio.getTotalGainLoss());
+        portfolio.setTotalGainLoss(totalGainLoss); // ✅ Store total gain/loss
 
-        // Return portfolio with investment metrics included
         return portfolio;
     }
+
 
     public InvestmentMetricsDTO calculateInvestmentMetrics(StockInvestment investment) {
         double totalGainLoss = 0.0;
@@ -121,7 +131,7 @@ public class PortfolioService {
         double averagePricePerShare = (totalShares == 0) ? 0.0 : totalPrice / totalShares;
 
         // Return the updated metrics
-        return new InvestmentMetricsDTO(returnPercentage, totalShares, averagePricePerShare, totalPrice, totalGainLoss);
+        return new InvestmentMetricsDTO(returnPercentage, totalShares, averagePricePerShare, totalPrice, totalGainLoss,0);
     }
 
 
