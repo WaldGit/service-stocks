@@ -298,7 +298,7 @@
     },
     {
       "ticker": "DINO",
-      "currentPrice": 36.92,
+      "currentPrice": 36.78,
       "tranches": [
         { "pricePerShare": 42.43, "purchaseDate": "2024-11-10" },
         { "pricePerShare": 38.7, "purchaseDate": "2024-11-03" },
@@ -307,8 +307,8 @@
         { "pricePerShare": 45.24, "purchaseDate": "2024-10-13" },
         { "pricePerShare": 46.77, "purchaseDate": "2024-10-07" }
       ],
-      "closed": false,
-      "closedDate": "2025-02-10"
+      "closed": true,
+      "closedDate": "2025-02-24"
     },
     {
       "ticker": "PFE",

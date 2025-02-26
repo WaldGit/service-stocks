@@ -28,6 +28,9 @@ public class StockInvestment {
     private boolean closed;
     private LocalDate closedDate;
 
+    @Transient
+    private InvestmentMetricsDTO metrics;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "portfolio_id", nullable = false)
     @JsonIgnore

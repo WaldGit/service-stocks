@@ -23,6 +23,21 @@ public class PortfolioController {
         return portfolioService.findAll();
     }
 
+    @GetMapping("/{id}/metrics")
+    public Portfolio getPortfolioWithMetrics(@PathVariable UUID id) {
+        return portfolioService.getPortfolioWithMetrics(id);
+
+    }
+
+    // New endpoint to get portfolio by name
+    @GetMapping("/name/{portfolioName}")
+    public Portfolio getPortfolioByName(@PathVariable String portfolioName) {
+        return portfolioService.getPortfolioByName(portfolioName);
+    }
+
+
+
+
     // ✅ Get portfolio by ID
     @GetMapping("/{id}")
     public Portfolio getPortfolioById(@PathVariable UUID id) {
