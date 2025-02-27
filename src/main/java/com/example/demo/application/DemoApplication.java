@@ -25,9 +25,10 @@ import java.nio.file.Paths;
 public class DemoApplication {
 
     @org.springframework.beans.factory.annotation.Value("classpath:portfolio-high-yield.json")
-    // This loads the portfolio.json file from the resources folder
-    private org.springframework.core.io.Resource portfolioJsonFile;
+    private org.springframework.core.io.Resource portfolioHighYieldJsonFile;
 
+    @org.springframework.beans.factory.annotation.Value("classpath:portfolio-dividend-growth.json")
+    private org.springframework.core.io.Resource portfolioDividendGrowthJsonFile;
 
     public static void main(String[] args) {
 
@@ -38,8 +39,19 @@ public class DemoApplication {
     public org.springframework.boot.CommandLineRunner run(StockService stockService, StockTrancheService stockTrancheService, PortfolioService portfolioService, com.fasterxml.jackson.databind.ObjectMapper objectMapper) {
         return args -> {
 
-            String jsonContent = readJsonFile(portfolioJsonFile);
+            String jsonContent = readJsonFile(portfolioHighYieldJsonFile);
+            this.loadPortfolio(jsonContent,stockService, stockTrancheService, portfolioService, objectMapper);
 
+            String jsonContent2 = readJsonFile(portfolioDividendGrowthJsonFile);
+            this.loadPortfolio(jsonContent2,stockService, stockTrancheService, portfolioService, objectMapper);
+        };
+    }
+
+    private void loadPortfolio(String jsonContent, StockService stockService,
+                               StockTrancheService stockTrancheService,
+                               PortfolioService portfolioService,
+                               com.fasterxml.jackson.databind.ObjectMapper objectMapper) {
+        try {
             // Parse the JSON content to a Portfolio object
             Portfolio portfolio = objectMapper.readValue(jsonContent, Portfolio.class);
             System.out.println("Portfolio : " + portfolio);
@@ -47,11 +59,10 @@ public class DemoApplication {
             // Process and save the portfolio data to the database
             processAndSavePortfolio(portfolio, stockService, portfolioService, stockTrancheService);
 
-            // Print a message to confirm that the data was loaded
             System.out.println("Portfolio data has been successfully processed and saved.");
             InvestmentReturnCalculator returnCalculator = new InvestmentReturnCalculator();
 
-            // 4. Fetch and print all investments with their tranches
+            // Fetch and print all investments with their tranches
             List<StockInvestment> investments = stockService.getAllStocksInvestements();
             for (StockInvestment inv : investments) {
                 System.out.println("📈 Investment: " + inv);
@@ -59,20 +70,24 @@ public class DemoApplication {
                 InvestmentMetrics metrics = returnCalculator.calculateInvestmentMetrics(inv);
                 System.out.println("📊 Return for this investment: " + metrics + "%");
 
-
-                // Access the list of tranches for this investment
-                java.util.List<StockTranche> tranches = inv.getTranches();
-
                 // Iterate over the list of StockTranche objects and print each one
-                for (StockTranche tr : tranches) {
+                for (StockTranche tr : inv.getTranches()) {
                     System.out.println("  🏦 Tranche: " + tr);
                 }
             }
 
             System.out.println("Fetching all stocks from DB...");
             //stockService.printAllStocks();
-        };
+
+        } catch (com.fasterxml.jackson.core.JsonProcessingException e) {
+            System.err.println("❌ Error parsing JSON: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
+
+
+
+
 
 
     // Utility method to read the file content as a String

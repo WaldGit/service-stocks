@@ -1,0 +1,14 @@
+{
+  "name": "Dividend Growth Stock Portfolio",
+  "stockInvestments": [
+    {
+      "ticker": "MRK",
+      "currentPrice": 88.05,
+      "tranches": [
+
+      ],
+      "closed": true,
+      "closedDate": "2025-02-10"
+    }
+  ]
+}
