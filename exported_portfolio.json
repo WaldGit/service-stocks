@@ -1,0 +1,1314 @@
+{
+  "id": "54ad367c-93c1-41ce-bb80-830b57fc65dd",
+  "name": "High Yield Portfolio",
+  "totalGainLoss": null,
+  "stockInvestments": [
+    {
+      "id": "a3cb9eaa-3033-4164-af95-59798f72b4cd",
+      "ticker": "MRK",
+      "currentPrice": 88.05,
+      "currentDatePrice": null,
+      "closed": true,
+      "closedDate": "2025-02-10",
+      "metrics": null,
+      "tranches": [
+        {
+          "id": "bb24edfb-763b-4f9d-b76d-3ee1ce177da2",
+          "pricePerShare": 98.0,
+          "quantity": 5.1020408163265305,
+          "purchaseDate": "2025-01-27",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "d59548df-5077-4da0-a92e-9855245155ad",
+          "pricePerShare": 96.24,
+          "quantity": 5.195344970906069,
+          "purchaseDate": "2025-01-21",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "27459115-b8b0-4211-9f9e-9b78a8af3b89",
+          "pricePerShare": 99.37,
+          "quantity": 5.031699708161416,
+          "purchaseDate": "2024-12-23",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "e6e8dc97-637b-4623-bdd5-677617cbedbc",
+          "pricePerShare": 101.16,
+          "quantity": 4.942665085013839,
+          "purchaseDate": "2024-11-25",
+          "transactionCost": null,
+          "percentageGain": null
+        }
+      ]
+    },
+    {
+      "id": "34209c6e-48f1-4dec-956e-d54f8b60c531",
+      "ticker": "BMY",
+      "currentPrice": 58.21,
+      "currentDatePrice": null,
+      "closed": false,
+      "closedDate": "2025-02-10",
+      "metrics": null,
+      "tranches": [
+        {
+          "id": "da3bac69-3d67-4639-b83a-d6bbaa1eaca3",
+          "pricePerShare": 49.28,
+          "quantity": 10.146103896103895,
+          "purchaseDate": "2024-09-10",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "1c2417f6-1dc7-4219-8088-4b48e9b7be9b",
+          "pricePerShare": 49.49,
+          "quantity": 10.103051121438675,
+          "purchaseDate": "2024-09-17",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "40f7488a-c24f-49a7-b9a9-6b36b5074150",
+          "pricePerShare": 49.41,
+          "quantity": 10.119409026512852,
+          "purchaseDate": "2024-09-20",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "5eefb2b7-eaac-483c-bae5-67cf5ec95a22",
+          "pricePerShare": 50.94,
+          "quantity": 9.815469179426778,
+          "purchaseDate": "2024-09-24",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "047c2937-9d3b-4ce0-aa8f-f6e6b0d6f7d8",
+          "pricePerShare": 53.44,
+          "quantity": 9.3562874251497,
+          "purchaseDate": "2024-10-07",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "e2c0a154-30bf-4080-8ad9-ec54f6c52332",
+          "pricePerShare": 52.67,
+          "quantity": 9.493070058857034,
+          "purchaseDate": "2024-10-13",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "88df6a37-d752-4079-aa1e-2fba42bed5a2",
+          "pricePerShare": 52.12,
+          "quantity": 9.593246354566386,
+          "purchaseDate": "2024-10-20",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "9190046b-9685-4d54-abf7-2c758e46fd0f",
+          "pricePerShare": 52.64,
+          "quantity": 9.498480243161094,
+          "purchaseDate": "2024-10-27",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "ecbeb25d-7157-46de-8af3-1d207df9529c",
+          "pricePerShare": 55.45,
+          "quantity": 9.017132551848512,
+          "purchaseDate": "2024-11-03",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "18099a78-c7e5-4d0d-8c71-31f16b9494bc",
+          "pricePerShare": 59.82,
+          "quantity": 8.358408559010364,
+          "purchaseDate": "2024-11-10",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "25cf58ff-a3ea-45e5-8970-b4e7927549e6",
+          "pricePerShare": 56.8,
+          "quantity": 8.802816901408452,
+          "purchaseDate": "2024-11-17",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "40872864-3178-4399-b901-faea64e2ed6e",
+          "pricePerShare": 58.78,
+          "quantity": 8.506294658046954,
+          "purchaseDate": "2024-11-25",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "288d9aad-296c-49a3-80e8-4dab696c27ec",
+          "pricePerShare": 56.28,
+          "quantity": 8.884150675195452,
+          "purchaseDate": "2024-12-02",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "6269841c-d8b8-4198-a03e-ef1a01752568",
+          "pricePerShare": 56.28,
+          "quantity": 8.884150675195452,
+          "purchaseDate": "2024-12-09",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "5508aa08-659d-4f45-93fd-9a1453ba8776",
+          "pricePerShare": 55.87,
+          "quantity": 8.94934669769107,
+          "purchaseDate": "2024-12-16",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "6d496a31-5532-4437-a877-5ce210defcd2",
+          "pricePerShare": 57.58,
+          "quantity": 8.683570684265371,
+          "purchaseDate": "2024-12-23",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "26eaa23f-c276-4d6f-820f-e5d52e2abd73",
+          "pricePerShare": 56.06,
+          "quantity": 8.919015340706386,
+          "purchaseDate": "2024-12-30",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "419924de-1ea6-4488-9236-f83b418e4d82",
+          "pricePerShare": 55.36,
+          "quantity": 9.031791907514451,
+          "purchaseDate": "2025-01-13",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "d3ac8902-cd22-4125-8ab1-6c841058cebb",
+          "pricePerShare": 57.04,
+          "quantity": 8.76577840112202,
+          "purchaseDate": "2025-01-21",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "a9403a38-08f5-4265-917b-ca351cde2164",
+          "pricePerShare": 60.64,
+          "quantity": 8.24538258575198,
+          "purchaseDate": "2025-01-27",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "d12900f0-8583-4593-8be0-b2fb46967bc0",
+          "pricePerShare": 59.95,
+          "quantity": 8.340283569641368,
+          "purchaseDate": "2025-02-03",
+          "transactionCost": null,
+          "percentageGain": null
+        }
+      ]
+    },
+    {
+      "id": "9db70a15-4d79-4fcb-ac42-3613734253fa",
+      "ticker": "PEP",
+      "currentPrice": 156.42,
+      "currentDatePrice": null,
+      "closed": false,
+      "closedDate": "2025-02-10",
+      "metrics": null,
+      "tranches": [
+        {
+          "id": "46ba7562-798d-4c68-a8dc-6219eb9cee22",
+          "pricePerShare": 154.54,
+          "quantity": 3.2354083085285366,
+          "purchaseDate": "2025-01-27",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "b6022855-edf0-42fc-8f97-f9ada8e2524b",
+          "pricePerShare": 148.55,
+          "quantity": 3.3658700774150114,
+          "purchaseDate": "2025-01-21",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "2d514503-0332-408e-b721-b70bfce890b7",
+          "pricePerShare": 144.5,
+          "quantity": 3.4602076124567476,
+          "purchaseDate": "2025-01-13",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "562992db-117f-4c42-a57e-3323dd152ba3",
+          "pricePerShare": 146.27,
+          "quantity": 3.4183359540575644,
+          "purchaseDate": "2025-01-06",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "cfe639d8-b304-43d8-aeba-fd063cbb751a",
+          "pricePerShare": 151.72,
+          "quantity": 3.2955444239388347,
+          "purchaseDate": "2024-12-30",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "ef60b77b-625e-4d5b-b3db-5676de18034e",
+          "pricePerShare": 151.29,
+          "quantity": 3.304911097891467,
+          "purchaseDate": "2024-12-23",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "63f0ed8f-ff1f-4af7-b1b6-ac4a930d71a9",
+          "pricePerShare": 156.02,
+          "quantity": 3.204717343930265,
+          "purchaseDate": "2024-12-16",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "794fef07-74b6-4813-b79b-695433eed325",
+          "pricePerShare": 159.47,
+          "quantity": 3.135385966012416,
+          "purchaseDate": "2024-12-09",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "b6282f3b-1eed-4fe8-86dd-039037d6d56e",
+          "pricePerShare": 163.05,
+          "quantity": 3.0665440049064703,
+          "purchaseDate": "2024-12-02",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "a0853da2-c86f-403b-b32a-81834862aa15",
+          "pricePerShare": 167.21,
+          "quantity": 2.9902517791998084,
+          "purchaseDate": "2024-10-07",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "467f45cb-4324-4103-8004-4398fc0d69cf",
+          "pricePerShare": 144.35,
+          "quantity": 3.4638032559750607,
+          "purchaseDate": null,
+          "transactionCost": null,
+          "percentageGain": null
+        }
+      ]
+    },
+    {
+      "id": "8266f948-65f8-445a-8ddd-7d71c698e975",
+      "ticker": "SONY",
+      "currentPrice": 25.07,
+      "currentDatePrice": null,
+      "closed": false,
+      "closedDate": "2025-02-10",
+      "metrics": null,
+      "tranches": [
+        {
+          "id": "232881d5-a7fb-488f-9e77-7cbb8d3a775c",
+          "pricePerShare": 20.925,
+          "quantity": 23.894862604540023,
+          "purchaseDate": "2025-01-27",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "835d409c-c791-4277-81eb-18e1871e7c07",
+          "pricePerShare": 20.9,
+          "quantity": 23.923444976076556,
+          "purchaseDate": "2025-01-21",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "8df73db0-5bfd-424f-b93b-a363cf9bfd19",
+          "pricePerShare": 20.21,
+          "quantity": 24.740227610094013,
+          "purchaseDate": "2025-01-13",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "cd6a0854-e347-4573-9039-9cf0ae6b996b",
+          "pricePerShare": 19.37,
+          "quantity": 25.813113061435207,
+          "purchaseDate": "2024-12-23",
+          "transactionCost": null,
+          "percentageGain": null
+        }
+      ]
+    },
+    {
+      "id": "eb1e570a-952c-4ece-9dbe-3b5e182eb175",
+      "ticker": "PNC",
+      "currentPrice": 186.47,
+      "currentDatePrice": null,
+      "closed": false,
+      "closedDate": "2025-02-10",
+      "metrics": null,
+      "tranches": [
+        {
+          "id": "e41f5b59-76d8-41dd-8e6a-ecfd19f940f2",
+          "pricePerShare": 201.45,
+          "quantity": 2.482005460412013,
+          "purchaseDate": "2025-01-28",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "5387d67c-c6a7-48e7-a929-ab58bf6876ec",
+          "pricePerShare": 198.56,
+          "quantity": 2.5181305398871876,
+          "purchaseDate": "2025-01-21",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "25a65bc9-4230-4bb5-9e8e-729cc21a9cc8",
+          "pricePerShare": 192.43,
+          "quantity": 2.5983474510211506,
+          "purchaseDate": "2025-01-13",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "a25e4e9b-b802-4146-af3c-c997b7bc0731",
+          "pricePerShare": 195.59,
+          "quantity": 2.5563679124699625,
+          "purchaseDate": "2025-01-06",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "3fb39395-b5f8-4940-b1c2-986afe1d922d",
+          "pricePerShare": 192.53,
+          "quantity": 2.5969978704617462,
+          "purchaseDate": "2024-12-30",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "e052ed3b-79e4-46b7-900e-efc7034b8491",
+          "pricePerShare": 200.53,
+          "quantity": 2.4933925098489005,
+          "purchaseDate": "2024-12-16",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "8ddc47f9-183d-42b1-84c6-f86123de693f",
+          "pricePerShare": 206.83,
+          "quantity": 2.417444277909394,
+          "purchaseDate": "2024-11-17",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "ae2ecdec-f39e-4c8d-b32a-cf4bcea8b2cf",
+          "pricePerShare": 209.71,
+          "quantity": 2.384244909637118,
+          "purchaseDate": "2024-11-10",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "4b43ce39-698f-4fed-96e8-c6b101ac455b",
+          "pricePerShare": 185.62,
+          "quantity": 2.6936752505117982,
+          "purchaseDate": "2024-11-03",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "3415532f-1507-46ad-b847-74ef396bded8",
+          "pricePerShare": 189.83,
+          "quantity": 2.6339356266132854,
+          "purchaseDate": "2024-10-27",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "7f1dfc7d-8e5c-4b89-a4a0-d819d0802788",
+          "pricePerShare": 185.64,
+          "quantity": 2.693385046326223,
+          "purchaseDate": "2024-10-20",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "c00277ba-4754-43e7-9519-028923e52ab8",
+          "pricePerShare": 183.37,
+          "quantity": 2.7267273817963678,
+          "purchaseDate": "2024-10-13",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "abc465bb-e8c5-4850-aacf-36925ae71758",
+          "pricePerShare": 182.23,
+          "quantity": 2.7437853262360754,
+          "purchaseDate": "2024-10-07",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "290b56b8-6653-46b4-975a-eec665d943d7",
+          "pricePerShare": 197.64,
+          "quantity": 2.529852256628213,
+          "purchaseDate": "2025-02-03",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "f1928f2a-797a-4d14-ae5d-2c192ffb2131",
+          "pricePerShare": 186.96,
+          "quantity": 2.6743688489516475,
+          "purchaseDate": "2025-02-24",
+          "transactionCost": null,
+          "percentageGain": null
+        }
+      ]
+    },
+    {
+      "id": "c3093bfe-ed64-4168-86ba-d52cab7e00b3",
+      "ticker": "UPS",
+      "currentPrice": 118.11,
+      "currentDatePrice": null,
+      "closed": false,
+      "closedDate": "2025-02-10",
+      "metrics": null,
+      "tranches": [
+        {
+          "id": "f607d1d1-911f-46a4-ac67-02d8d38e3406",
+          "pricePerShare": 136.61,
+          "quantity": 3.660054168801698,
+          "purchaseDate": "2025-01-27",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "a6a9e9ff-deae-4c72-8c07-bc00dc00b30a",
+          "pricePerShare": 132.87,
+          "quantity": 3.7630766915029725,
+          "purchaseDate": "2025-01-21",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "236055bd-8a61-4139-b11a-611a444ac61e",
+          "pricePerShare": 125.01,
+          "quantity": 3.999680025597952,
+          "purchaseDate": "2025-01-13",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "ca267ce4-ee88-4e79-aac8-6cf96ce69468",
+          "pricePerShare": 124.21,
+          "quantity": 4.025440785766041,
+          "purchaseDate": "2025-01-06",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "aa04da1d-9dd8-481d-8354-8e5ad3cd9f74",
+          "pricePerShare": 125.32,
+          "quantity": 3.989786147462496,
+          "purchaseDate": "2024-12-30",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "71f61b52-1f1a-4237-8fe7-31024dac4b1b",
+          "pricePerShare": 125.75,
+          "quantity": 3.9761431411530817,
+          "purchaseDate": "2024-12-23",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "1babd2ae-43cb-493e-b916-b37c1126ccad",
+          "pricePerShare": 128.55,
+          "quantity": 3.889537145079735,
+          "purchaseDate": "2024-12-16",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "81267b8f-d73b-4b87-b385-73f55f006cf3",
+          "pricePerShare": 128.53,
+          "quantity": 3.890142379211079,
+          "purchaseDate": "2024-12-09",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "2c79390e-478d-406e-9a4f-cb36858d23d7",
+          "pricePerShare": 135.13,
+          "quantity": 3.700140605343003,
+          "purchaseDate": "2024-11-17",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "29b367df-0d3c-43d2-8362-762f623b6305",
+          "pricePerShare": 111.29,
+          "quantity": 4.4927666457004225,
+          "purchaseDate": "2025-02-03",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "d4da0c71-df41-4b10-9427-26063b7251f6",
+          "pricePerShare": 114.16,
+          "quantity": 4.379817799579538,
+          "purchaseDate": "2025-02-10",
+          "transactionCost": null,
+          "percentageGain": null
+        }
+      ]
+    },
+    {
+      "id": "a0537dd5-98a6-40af-9674-f1eeb9410ab8",
+      "ticker": "MCHP",
+      "currentPrice": 60.17,
+      "currentDatePrice": null,
+      "closed": false,
+      "closedDate": "2025-02-10",
+      "metrics": null,
+      "tranches": [
+        {
+          "id": "3e2fe13e-73de-4581-a78a-9a5f98e0db46",
+          "pricePerShare": 57.31,
+          "quantity": 8.724480893386843,
+          "purchaseDate": "2025-01-27",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "7608689c-5fd3-4a57-beaf-154e8ac8a076",
+          "pricePerShare": 57.12,
+          "quantity": 8.753501400560225,
+          "purchaseDate": "2024-12-30",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "82d63f00-8e86-4713-b738-e5048778afe7",
+          "pricePerShare": 61.87,
+          "quantity": 8.081461128171973,
+          "purchaseDate": "2024-12-09",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "1a9a714c-cb13-43c9-8b42-1ae2aa90bb8a",
+          "pricePerShare": 52.26,
+          "quantity": 9.567546880979718,
+          "purchaseDate": "2025-02-03",
+          "transactionCost": null,
+          "percentageGain": null
+        }
+      ]
+    },
+    {
+      "id": "bea08720-6c42-43a4-a382-32da3e8de399",
+      "ticker": "AMT",
+      "currentPrice": 203.0,
+      "currentDatePrice": null,
+      "closed": false,
+      "closedDate": "2025-02-10",
+      "metrics": null,
+      "tranches": [
+        {
+          "id": "2530f48d-17d6-4a0a-be91-1946aedbdd84",
+          "pricePerShare": 191.51,
+          "quantity": 2.6108297216855516,
+          "purchaseDate": "2025-01-27",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "986b26d6-f781-475d-bfc5-96227d87b14c",
+          "pricePerShare": 176.94,
+          "quantity": 2.8258166610150335,
+          "purchaseDate": "2025-01-13",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "bbb21b5a-1080-4a5d-a4a8-d857163afee1",
+          "pricePerShare": 181.92,
+          "quantity": 2.7484608619173265,
+          "purchaseDate": "2024-12-30",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "e3e21386-cf70-4849-ab95-49063f3a4183",
+          "pricePerShare": 185.37,
+          "quantity": 2.6973080865296435,
+          "purchaseDate": "2025-02-03",
+          "transactionCost": null,
+          "percentageGain": null
+        }
+      ]
+    },
+    {
+      "id": "524d4fe6-3a8f-459f-afd9-1339c26f19b2",
+      "ticker": "AMGN",
+      "currentPrice": 315.63,
+      "currentDatePrice": null,
+      "closed": false,
+      "closedDate": "2025-02-10",
+      "metrics": null,
+      "tranches": [
+        {
+          "id": "c690a874-b87a-4dea-a8a7-e5bfd4aec672",
+          "pricePerShare": 270.19,
+          "quantity": 1.850549613235131,
+          "purchaseDate": "2025-01-13",
+          "transactionCost": null,
+          "percentageGain": null
+        }
+      ]
+    },
+    {
+      "id": "449e8ca4-8506-497c-bcca-61de7bf1c8eb",
+      "ticker": "GILD",
+      "currentPrice": 111.53,
+      "currentDatePrice": null,
+      "closed": false,
+      "closedDate": "2025-02-10",
+      "metrics": null,
+      "tranches": [
+        {
+          "id": "ae5b3d7c-688c-45d3-9ae9-8c2cfa056170",
+          "pricePerShare": 89.84,
+          "quantity": 5.565449688334818,
+          "purchaseDate": "2025-01-13",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "495e9cbf-fa5e-4885-907a-f39aa604b0c9",
+          "pricePerShare": 92.05,
+          "quantity": 5.431830526887561,
+          "purchaseDate": "2024-12-16",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "ec1b11cc-6aae-4e32-af46-ef892da24a59",
+          "pricePerShare": 90.59,
+          "quantity": 5.519372999227287,
+          "purchaseDate": "2024-12-09",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "a874f1c5-2caf-452e-8893-c30c4dab15ba",
+          "pricePerShare": 94.02,
+          "quantity": 5.318017443097213,
+          "purchaseDate": "2024-12-02",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "e07af0d2-9e2d-41c9-9723-b0e546213fec",
+          "pricePerShare": 90.48,
+          "quantity": 5.526083112290008,
+          "purchaseDate": "2024-11-25",
+          "transactionCost": null,
+          "percentageGain": null
+        }
+      ]
+    },
+    {
+      "id": "7e26406a-7a5a-479a-ba9c-763fee547bc0",
+      "ticker": "PM",
+      "currentPrice": 156.28,
+      "currentDatePrice": null,
+      "closed": false,
+      "closedDate": "2025-02-10",
+      "metrics": null,
+      "tranches": [
+        {
+          "id": "4904cb2b-2885-4639-a936-98fcf05d7f03",
+          "pricePerShare": 121.0,
+          "quantity": 4.132231404958677,
+          "purchaseDate": "2025-01-06",
+          "transactionCost": null,
+          "percentageGain": null
+        }
+      ]
+    },
+    {
+      "id": "e14210ff-104d-4f5f-8366-db78b5546606",
+      "ticker": "DEO",
+      "currentPrice": 110.27,
+      "currentDatePrice": null,
+      "closed": true,
+      "closedDate": "2025-02-10",
+      "metrics": null,
+      "tranches": [
+        {
+          "id": "dd3a4195-b230-4a46-bec0-0bb98bff07f1",
+          "pricePerShare": 125.32,
+          "quantity": 3.989786147462496,
+          "purchaseDate": "2025-01-06",
+          "transactionCost": null,
+          "percentageGain": null
+        }
+      ]
+    },
+    {
+      "id": "7b64d23c-2e6c-4a7f-9ea6-dfc3311c5880",
+      "ticker": "ABBV",
+      "currentPrice": 204.08,
+      "currentDatePrice": null,
+      "closed": false,
+      "closedDate": "2025-02-10",
+      "metrics": null,
+      "tranches": [
+        {
+          "id": "5ff7cfff-d556-404b-8d70-3f626576560d",
+          "pricePerShare": 180.1,
+          "quantity": 2.77623542476402,
+          "purchaseDate": "2025-01-06",
+          "transactionCost": null,
+          "percentageGain": null
+        }
+      ]
+    },
+    {
+      "id": "43106eef-5f5d-4240-ac6a-df8fb029ee59",
+      "ticker": "CMCSA",
+      "currentPrice": 36.3,
+      "currentDatePrice": null,
+      "closed": false,
+      "closedDate": "2025-02-10",
+      "metrics": null,
+      "tranches": [
+        {
+          "id": "d34e0b93-32f6-4137-a762-bbf8a562f633",
+          "pricePerShare": 37.49,
+          "quantity": 13.336889837289943,
+          "purchaseDate": "2025-01-06",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "3505c35a-02bd-4673-869c-6ae95b536bd3",
+          "pricePerShare": 33.19,
+          "quantity": 15.064778547755349,
+          "purchaseDate": "2025-02-03",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "1505b737-9b63-4b63-9e60-0b89d434073b",
+          "pricePerShare": 34.47,
+          "quantity": 14.505366985784741,
+          "purchaseDate": "2025-02-10",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "53947565-3bea-4e4e-8af1-febf4f26d41c",
+          "pricePerShare": 36.3,
+          "quantity": 13.774104683195594,
+          "purchaseDate": "2025-02-24",
+          "transactionCost": null,
+          "percentageGain": null
+        }
+      ]
+    },
+    {
+      "id": "f8539c74-abd1-4f4a-a6b9-4991b68df31e",
+      "ticker": "LYB",
+      "currentPrice": 77.31,
+      "currentDatePrice": null,
+      "closed": false,
+      "closedDate": "2025-02-10",
+      "metrics": null,
+      "tranches": [
+        {
+          "id": "80ac2223-c370-4f8b-b28b-6ca2907c2999",
+          "pricePerShare": 73.86,
+          "quantity": 6.769564040075819,
+          "purchaseDate": "2025-01-06",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "4427be5d-fd50-46d3-876c-9e345bf911cd",
+          "pricePerShare": 74.68,
+          "quantity": 6.695232994108195,
+          "purchaseDate": "2024-12-16",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "57dcb18d-9cbe-4f9d-8800-dac8d555f607",
+          "pricePerShare": 84.02,
+          "quantity": 5.950964056177101,
+          "purchaseDate": "2024-11-25",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "104eab72-f89b-49cb-8928-8fc50f8bcbc9",
+          "pricePerShare": 83.2,
+          "quantity": 6.009615384615384,
+          "purchaseDate": "2024-11-17",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "86469868-00e9-4abe-b1fd-4ad00ff993fc",
+          "pricePerShare": 84.97,
+          "quantity": 5.884429798752501,
+          "purchaseDate": "2024-11-10",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "2e2ded3f-edb8-4a25-9744-daca270b0b0b",
+          "pricePerShare": 87.72,
+          "quantity": 5.699954400364797,
+          "purchaseDate": "2024-10-27",
+          "transactionCost": null,
+          "percentageGain": null
+        }
+      ]
+    },
+    {
+      "id": "45280c8f-9719-4398-ac97-0279e0eb547a",
+      "ticker": "CVS",
+      "currentPrice": 63.02,
+      "currentDatePrice": null,
+      "closed": false,
+      "closedDate": "2025-02-10",
+      "metrics": null,
+      "tranches": [
+        {
+          "id": "d7eafbcd-91d0-4feb-adbe-ca95523b97b4",
+          "pricePerShare": 43.94,
+          "quantity": 11.37915339098771,
+          "purchaseDate": "2024-12-30",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "8b3f2515-7581-4cd9-b438-a3ae3fd428d9",
+          "pricePerShare": 44.14,
+          "quantity": 11.327594019030357,
+          "purchaseDate": "2024-12-23",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "513f9dc3-82aa-4317-8c19-5800450a6810",
+          "pricePerShare": 46.6,
+          "quantity": 10.729613733905579,
+          "purchaseDate": "2024-12-16",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "ccdbbdac-77a9-4431-9eb2-f38136dbdb99",
+          "pricePerShare": 56.07,
+          "quantity": 8.917424647761726,
+          "purchaseDate": "2024-12-09",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "e70310a3-15b6-4724-b325-a92544a24450",
+          "pricePerShare": 59.08,
+          "quantity": 8.463100880162491,
+          "purchaseDate": "2024-12-02",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "fb1a54ae-e2a2-4382-b573-faa5316d1705",
+          "pricePerShare": 60.08,
+          "quantity": 8.322237017310254,
+          "purchaseDate": "2024-11-25",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "a0261e76-3e49-44e9-b10a-60f6743296d2",
+          "pricePerShare": 54.65,
+          "quantity": 9.149130832570906,
+          "purchaseDate": "2024-11-03",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "e964fff0-a1fb-4656-ab9b-118c7ab4f7fa",
+          "pricePerShare": 57.36,
+          "quantity": 8.716875871687588,
+          "purchaseDate": "2024-10-27",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "0e209054-d49d-407f-9ecd-cbac1c37f877",
+          "pricePerShare": 65.25,
+          "quantity": 7.662835249042145,
+          "purchaseDate": "2024-10-07",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "984f1b73-3f31-47f4-abc9-f102c619fc54",
+          "pricePerShare": 58.08,
+          "quantity": 8.608815426997245,
+          "purchaseDate": "2024-09-24",
+          "transactionCost": null,
+          "percentageGain": null
+        }
+      ]
+    },
+    {
+      "id": "5745e011-0d7a-4163-ad04-e9dcb7f25460",
+      "ticker": "JNJ",
+      "currentPrice": 166.09,
+      "currentDatePrice": null,
+      "closed": false,
+      "closedDate": "2025-02-10",
+      "metrics": null,
+      "tranches": [
+        {
+          "id": "0372c77a-b4d9-40e7-a63f-ea5dec78055c",
+          "pricePerShare": 154.8,
+          "quantity": 3.229974160206718,
+          "purchaseDate": "2024-12-02",
+          "transactionCost": null,
+          "percentageGain": null
+        }
+      ]
+    },
+    {
+      "id": "ff78547b-e094-49d4-9f39-89765a469062",
+      "ticker": "GSK",
+      "currentPrice": 37.08,
+      "currentDatePrice": null,
+      "closed": false,
+      "closedDate": "2025-02-10",
+      "metrics": null,
+      "tranches": [
+        {
+          "id": "f6c451e9-cbec-4fd3-b23f-cf9e2142d448",
+          "pricePerShare": 34.31,
+          "quantity": 14.573010784027979,
+          "purchaseDate": "2024-12-02",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "7cc6c70f-4eaf-4820-811d-31bc0772e6fd",
+          "pricePerShare": 36.47,
+          "quantity": 13.709898546750754,
+          "purchaseDate": "2025-02-10",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "3ea266d5-dff7-4f25-8edc-aaa688a814e6",
+          "pricePerShare": 37.08,
+          "quantity": 13.48435814455232,
+          "purchaseDate": "2025-02-24",
+          "transactionCost": null,
+          "percentageGain": null
+        }
+      ]
+    },
+    {
+      "id": "6bb7f137-aa0e-4dfb-b35b-51d8eadaa440",
+      "ticker": "AMX",
+      "currentPrice": 14.49,
+      "currentDatePrice": null,
+      "closed": false,
+      "closedDate": "2025-02-10",
+      "metrics": null,
+      "tranches": [
+        {
+          "id": "998f4486-92fd-4fd3-9c6f-12a2720eb1ce",
+          "pricePerShare": 14.81,
+          "quantity": 33.7609723160027,
+          "purchaseDate": "2024-11-25",
+          "transactionCost": null,
+          "percentageGain": null
+        }
+      ]
+    },
+    {
+      "id": "df2da5cf-ae6d-41a7-9036-1c73758bc2a6",
+      "ticker": "CVX",
+      "currentPrice": 157.89,
+      "currentDatePrice": null,
+      "closed": false,
+      "closedDate": "2025-02-10",
+      "metrics": null,
+      "tranches": [
+        {
+          "id": "4e774867-fa53-4e68-9cb2-07fc71b3fa68",
+          "pricePerShare": 156.5,
+          "quantity": 3.194888178913738,
+          "purchaseDate": "2024-11-25",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "5dbc61cb-6b93-4171-8690-a3bef9348219",
+          "pricePerShare": 150.88,
+          "quantity": 3.3138918345705197,
+          "purchaseDate": "2024-10-20",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "0e187e67-3c7a-44fb-aaba-d83e11212bc2",
+          "pricePerShare": 151.78,
+          "quantity": 3.294241665568586,
+          "purchaseDate": "2024-10-13",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "c0e30151-969b-4b1f-87cd-e9df61aa902e",
+          "pricePerShare": 147.45,
+          "quantity": 3.3909799932180404,
+          "purchaseDate": "2024-09-24",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "3b29bdc9-571b-463a-975b-80ca55559338",
+          "pricePerShare": 145.68,
+          "quantity": 3.43218012081274,
+          "purchaseDate": "2024-09-20",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "299368e5-1ce3-404b-bf01-b7cfa2e4ebe2",
+          "pricePerShare": 143.41,
+          "quantity": 3.4865072170699394,
+          "purchaseDate": "2024-09-17",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "53626e2c-4ce3-4fb6-8fbd-6f657edffa80",
+          "pricePerShare": 138.32,
+          "quantity": 3.6148062463851938,
+          "purchaseDate": "2024-09-10",
+          "transactionCost": null,
+          "percentageGain": null
+        }
+      ]
+    },
+    {
+      "id": "06146ed1-df35-4133-a30e-9282cbd1dd29",
+      "ticker": "DINO",
+      "currentPrice": 36.78,
+      "currentDatePrice": null,
+      "closed": true,
+      "closedDate": "2025-02-24",
+      "metrics": null,
+      "tranches": [
+        {
+          "id": "b79f45a9-079a-46db-aaf7-04014ac643c4",
+          "pricePerShare": 42.43,
+          "quantity": 11.784115012962527,
+          "purchaseDate": "2024-11-10",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "289c424e-94b6-4cf4-8e22-7c3c27f3a127",
+          "pricePerShare": 38.7,
+          "quantity": 12.919896640826872,
+          "purchaseDate": "2024-11-03",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "7357648c-31fa-4b66-a781-b9260b272ea8",
+          "pricePerShare": 42.88,
+          "quantity": 11.66044776119403,
+          "purchaseDate": "2024-10-27",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "94a8ff46-ed2f-4fc3-bc1f-e5643577523c",
+          "pricePerShare": 43.91,
+          "quantity": 11.386927806877706,
+          "purchaseDate": "2024-10-20",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "0c9ef94f-b5ea-46a7-85e5-eff47bec7144",
+          "pricePerShare": 45.24,
+          "quantity": 11.052166224580017,
+          "purchaseDate": "2024-10-13",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "3e29553e-72b0-4917-bf87-6cf62dedd1bb",
+          "pricePerShare": 46.77,
+          "quantity": 10.690613641223006,
+          "purchaseDate": "2024-10-07",
+          "transactionCost": null,
+          "percentageGain": null
+        }
+      ]
+    },
+    {
+      "id": "591a698f-0e49-4fa1-af4f-380ade5440ef",
+      "ticker": "PFE",
+      "currentPrice": 26.65,
+      "currentDatePrice": null,
+      "closed": false,
+      "closedDate": "2025-02-10",
+      "metrics": null,
+      "tranches": [
+        {
+          "id": "b4229e8c-1328-44ad-880e-1b416862650b",
+          "pricePerShare": 27.76,
+          "quantity": 18.011527377521613,
+          "purchaseDate": "2024-11-03",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "515c1218-6044-4a3d-9102-d34050344ad9",
+          "pricePerShare": 28.86,
+          "quantity": 17.325017325017324,
+          "purchaseDate": "2024-10-27",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "88e01bf3-b86f-41d5-b377-5a7675ac5483",
+          "pricePerShare": 28.93,
+          "quantity": 17.283097131005878,
+          "purchaseDate": "2024-10-20",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "32ba2c9c-6da7-47ad-a4cb-efcaba2b487f",
+          "pricePerShare": 29.08,
+          "quantity": 17.1939477303989,
+          "purchaseDate": "2024-10-13",
+          "transactionCost": null,
+          "percentageGain": null
+        },
+        {
+          "id": "03e90d53-b87b-40c2-814b-1ecee31498b4",
+          "pricePerShare": 29.2,
+          "quantity": 17.123287671232877,
+          "purchaseDate": "2024-10-07",
+          "transactionCost": null,
+          "percentageGain": null
+        }
+      ]
+    },
+    {
+      "id": "5a97522b-016e-41e4-843c-ae32236f5e66",
+      "ticker": "CME",
+      "currentPrice": 247.75,
+      "currentDatePrice": null,
+      "closed": false,
+      "closedDate": "2025-02-10",
+      "metrics": null,
+      "tranches": [
+        {
+          "id": "49881938-b12d-443f-b048-95e03eeba013",
+          "pricePerShare": 247.75,
+          "quantity": 2.0181634712411705,
+          "purchaseDate": "2025-02-24",
+          "transactionCost": null,
+          "percentageGain": null
+        }
+      ]
+    },
+    {
+      "id": "24617cb5-0a75-48b1-866a-6b7e5a7e79d8",
+      "ticker": "TGT",
+      "currentPrice": 125.77,
+      "currentDatePrice": null,
+      "closed": false,
+      "closedDate": "2025-02-10",
+      "metrics": null,
+      "tranches": [
+        {
+          "id": "89c7c327-3c10-4f0b-b22b-42ca1656bd3e",
+          "pricePerShare": 125.77,
+          "quantity": 3.975510853144629,
+          "purchaseDate": "2025-02-24",
+          "transactionCost": null,
+          "percentageGain": null
+        }
+      ]
+    },
+    {
+      "id": "716447ba-6021-4226-9975-9c47dfe3390e",
+      "ticker": "HII",
+      "currentPrice": 168.81,
+      "currentDatePrice": null,
+      "closed": false,
+      "closedDate": "2025-02-10",
+      "metrics": null,
+      "tranches": [
+        {
+          "id": "b373cdd7-5974-4e12-94b0-29a29e9122d5",
+          "pricePerShare": 168.81,
+          "quantity": 2.9619098394644867,
+          "purchaseDate": "2025-02-24",
+          "transactionCost": null,
+          "percentageGain": null
+        }
+      ]
+    }
+  ]
+}

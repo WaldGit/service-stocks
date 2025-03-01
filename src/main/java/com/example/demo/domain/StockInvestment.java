@@ -25,6 +25,8 @@ public class StockInvestment {
 
     private String ticker;
     private Double currentPrice;
+    private LocalDate currentDatePrice;
+
     private boolean closed;
     private LocalDate closedDate;
 

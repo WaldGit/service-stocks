@@ -7,20 +7,40 @@ import com.example.demo.domain.StockInvestment;
 import com.example.demo.domain.StockTranche;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import com.example.demo.domain.StockPriceDTO;
+import java.time.LocalDate;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.Comparator;
+import java.io.File;
+import java.io.IOException;
+import java.util.Optional;
+
+
+import com.example.demo.application.services.StockPriceService;
+import com.example.demo.adapters.out.StockInvestmentRepository;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Service
 public class PortfolioService {
 
     private final PortfolioRepository portfolioRepository;
+    private final StockInvestmentRepository stockInvestmentRepository;
+    private final StockPriceService stockPriceService;
+    private final ObjectMapper objectMapper; // ✅ JSON Mapper
 
     @Autowired
-    public PortfolioService(PortfolioRepository portfolioRepository) {
+    public PortfolioService(PortfolioRepository portfolioRepository,StockInvestmentRepository stockInvestmentRepository,StockPriceService stockPriceService,ObjectMapper objectMapper) {
         this.portfolioRepository = portfolioRepository;
+        this.stockInvestmentRepository = stockInvestmentRepository;
+        this.stockPriceService =stockPriceService;
+        this.objectMapper = objectMapper;
     }
+
 
     public Portfolio save(Portfolio portfolio) {
         return portfolioRepository.save(portfolio);
@@ -56,16 +76,19 @@ public class PortfolioService {
         portfolioRepository.save(portfolio);
     }
 
+    public Portfolio getPortfolioByName(String name) {
+        return portfolioRepository.findByName(name)
+                .orElseThrow(() -> new RuntimeException("Portfolio not found with name: " + name));
+    }
+
     public Optional<Portfolio> findById(UUID id) {
         return portfolioRepository.findById(id);
     }
 
-    // New method to get Portfolio by name
-    public Portfolio getPortfolioByName(String name) {
-        // Find the portfolio by name (assuming portfolioRepository has this method)
-        java.util.Optional<Portfolio> portfolioOptional = portfolioRepository.findByName(name);
-        return portfolioOptional.orElse(null);  // return null if not found
+    public Portfolio getPortfolioForExport(UUID portfolioId) {
+        return portfolioRepository.findPortfolioWithInvestments(portfolioId);
     }
+
 
     public Portfolio getPortfolioWithMetrics(UUID portfolioId) {
         // Fetch the portfolio from the repository
@@ -132,6 +155,75 @@ public class PortfolioService {
 
         // Return the updated metrics
         return new InvestmentMetricsDTO(returnPercentage, totalShares, averagePricePerShare, totalPrice, totalGainLoss,0);
+    }
+
+    @Transactional
+    public Portfolio updatePortfolioMetrics(UUID portfolioId) {
+        Portfolio portfolio = portfolioRepository.findById(portfolioId)
+                .orElseThrow(() -> new RuntimeException("Portfolio not found"));
+
+        double totalPortfolioInvestment = 0.0;
+
+        // ✅ Sort investments by `currentDatePrice` (oldest first) & get oldest 25
+        List<StockInvestment> sortedInvestments = portfolio.getStockInvestments().stream()
+                .sorted(Comparator.comparing(StockInvestment::getCurrentDatePrice, Comparator.nullsLast(LocalDate::compareTo)))
+                .limit(25)
+                .toList();
+
+        // ✅ Fetch latest stock prices and update database
+        for (StockInvestment investment : sortedInvestments) {
+            StockPriceDTO stockPrice = stockPriceService.getLatestStockPrice(investment.getTicker());
+            if (stockPrice != null) {
+                investment.setCurrentPrice(stockPrice.getPrice());
+                investment.setCurrentDatePrice(stockPrice.getDate());
+            }
+        }
+
+        // ✅ Recalculate investment metrics & update allocations
+        double totalGainLoss = 0.0;
+        for (StockInvestment investment : portfolio.getStockInvestments()) {
+            InvestmentMetricsDTO metrics = calculateInvestmentMetrics(investment);
+            investment.setMetrics(metrics);
+            totalPortfolioInvestment += metrics.getTotalPrice();
+            totalGainLoss += metrics.getTotalGainLoss();
+        }
+
+        for (StockInvestment investment : portfolio.getStockInvestments()) {
+            InvestmentMetricsDTO metrics = investment.getMetrics();
+            if (totalPortfolioInvestment > 0) {
+                metrics.setAllocationPercentage((metrics.getTotalPrice() / totalPortfolioInvestment) * 100);
+            } else {
+                metrics.setAllocationPercentage(0.0);
+            }
+        }
+
+        // ✅ Save updated investments back to the database
+        stockInvestmentRepository.saveAll(portfolio.getStockInvestments());
+
+        // ✅ Update portfolio total gain/loss
+        portfolio.setTotalGainLoss(totalGainLoss);
+        portfolioRepository.save(portfolio); // Save updated portfolio
+
+        return portfolio;
+    }
+
+    public void exportPortfolioToJson(UUID portfolioId) {
+        Portfolio portfolioOpt = this.getPortfolioForExport(portfolioId);
+
+
+            try {
+                // ✅ Define output file path
+                String filePath = "exported_portfolio.json";
+                File file = new File(filePath);
+
+                // ✅ Convert DTO to JSON and save it
+                objectMapper.writeValue(file, portfolioOpt);
+
+                System.out.println("✅ Portfolio exported to JSON: " + file.getAbsolutePath());
+            } catch (IOException e) {
+                System.err.println("❌ Error exporting portfolio: " + e.getMessage());
+            }
+
     }
 
 

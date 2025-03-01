@@ -17,12 +17,16 @@ import com.example.demo.application.services.StockTrancheService;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Optional;
 
 @SpringBootApplication(scanBasePackages = "com.example")
 @EntityScan(basePackages = "com.example")
 @EnableJpaRepositories(basePackages = "com.example")
 
 public class DemoApplication {
+
+    private static final String TARGET_PORTFOLIO_NAME = "High Yield Portfolio"; // 🔄 Change this to the desired name
+
 
     @org.springframework.beans.factory.annotation.Value("classpath:portfolio-high-yield.json")
     private org.springframework.core.io.Resource portfolioHighYieldJsonFile;
@@ -44,6 +48,18 @@ public class DemoApplication {
 
             String jsonContent2 = readJsonFile(portfolioDividendGrowthJsonFile);
             this.loadPortfolio(jsonContent2,stockService, stockTrancheService, portfolioService, objectMapper);
+
+            System.out.println("🚀 Application started: Searching for portfolio '" + TARGET_PORTFOLIO_NAME + "'");
+
+            // ✅ Find the portfolio by name
+            Portfolio portfolio = portfolioService.getPortfolioByName(TARGET_PORTFOLIO_NAME);
+            System.out.println("Found portfolio: " + portfolio);
+            portfolioService.exportPortfolioToJson(portfolio.getId());
+                // ✅ Update metrics
+            //portfolioService.updatePortfolioMetrics(portfolio.getId());
+
+              //  System.out.println("✅ Portfolio metrics updated.");
+
         };
     }
 
