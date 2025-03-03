@@ -213,7 +213,7 @@ public class PortfolioService {
 
             try {
                 // ✅ Define output file path
-                String filePath = "exported_portfolio.json";
+                String filePath = "exported_portfolio_" + portfolioOpt.getName() +".json";
                 File file = new File(filePath);
 
                 // ✅ Convert DTO to JSON and save it

@@ -26,9 +26,10 @@ import java.util.Optional;
 public class DemoApplication {
 
     private static final String TARGET_PORTFOLIO_NAME = "High Yield Portfolio"; // 🔄 Change this to the desired name
+    //private static final String TARGET_PORTFOLIO_NAME = "Dividend Growth Stock Portfolio"; // 🔄 Change this to the desired name
 
 
-    @org.springframework.beans.factory.annotation.Value("classpath:portfolio-high-yield.json")
+    @org.springframework.beans.factory.annotation.Value("classpath:portfolio-high-yield_exported_portfolio.json")
     private org.springframework.core.io.Resource portfolioHighYieldJsonFile;
 
     @org.springframework.beans.factory.annotation.Value("classpath:portfolio-dividend-growth.json")
@@ -39,28 +40,49 @@ public class DemoApplication {
         SpringApplication.run(DemoApplication.class, args);
     }
 
-    @org.springframework.context.annotation.Bean
-    public org.springframework.boot.CommandLineRunner run(StockService stockService, StockTrancheService stockTrancheService, PortfolioService portfolioService, com.fasterxml.jackson.databind.ObjectMapper objectMapper) {
-        return args -> {
+    private void fetchFromFiles(StockTrancheService stockTrancheService,StockService stockService,PortfolioService  portfolioService,com.fasterxml.jackson.databind.ObjectMapper objectMapper) {
+        try {
 
             String jsonContent = readJsonFile(portfolioHighYieldJsonFile);
             this.loadPortfolio(jsonContent,stockService, stockTrancheService, portfolioService, objectMapper);
+
 
             String jsonContent2 = readJsonFile(portfolioDividendGrowthJsonFile);
             this.loadPortfolio(jsonContent2,stockService, stockTrancheService, portfolioService, objectMapper);
 
             System.out.println("🚀 Application started: Searching for portfolio '" + TARGET_PORTFOLIO_NAME + "'");
 
-            // ✅ Find the portfolio by name
-            Portfolio portfolio = portfolioService.getPortfolioByName(TARGET_PORTFOLIO_NAME);
-            System.out.println("Found portfolio: " + portfolio);
-            portfolioService.exportPortfolioToJson(portfolio.getId());
-                // ✅ Update metrics
-            //portfolioService.updatePortfolioMetrics(portfolio.getId());
+        } catch (IOException e) {
+            System.err.println("❌ Error parsing JSON: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
 
-              //  System.out.println("✅ Portfolio metrics updated.");
+    private void exportPortfolioToJson(PortfolioService portfolioService) {
+        Portfolio portfolio = portfolioService.getPortfolioByName(TARGET_PORTFOLIO_NAME);
+        System.out.println("Found portfolio: " + portfolio);
+        portfolioService.exportPortfolioToJson(portfolio.getId());
+
+    }
+
+
+    @org.springframework.context.annotation.Bean
+    public org.springframework.boot.CommandLineRunner run(StockService stockService, StockTrancheService stockTrancheService, PortfolioService portfolioService, com.fasterxml.jackson.databind.ObjectMapper objectMapper) {
+        return args -> {
+
+           //this.fetchFromFiles(portfolioService);
+           //this.exportPortfolioToJson(portfolioService);
+
+
+           this.updatePortfolioMetrics(portfolioService);
 
         };
+    }
+
+    private void updatePortfolioMetrics(PortfolioService portfolioService) {
+        Portfolio portfolio = portfolioService.getPortfolioByName(TARGET_PORTFOLIO_NAME);
+        System.out.println("Found portfolio: " + portfolio);
+        portfolioService.updatePortfolioMetrics(portfolio.getId());
     }
 
     private void loadPortfolio(String jsonContent, StockService stockService,
