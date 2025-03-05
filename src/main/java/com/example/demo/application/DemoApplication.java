@@ -74,7 +74,7 @@ public class DemoApplication {
            //this.exportPortfolioToJson(portfolioService);
 
 
-           this.updatePortfolioMetrics(portfolioService);
+           //this.updatePortfolioMetrics(portfolioService);
 
         };
     }
@@ -83,6 +83,8 @@ public class DemoApplication {
         Portfolio portfolio = portfolioService.getPortfolioByName(TARGET_PORTFOLIO_NAME);
         System.out.println("Found portfolio: " + portfolio);
         portfolioService.updatePortfolioMetrics(portfolio.getId());
+        System.out.println("Done updating portfolio metrics..");
+
     }
 
     private void loadPortfolio(String jsonContent, StockService stockService,
