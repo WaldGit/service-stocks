@@ -14,4 +14,11 @@ public class StockInvestmentService {
     public List<StockInvestment> getInvestmentsByPortfolioId(UUID portfolioId) {
         return stockInvestmentRepository.findByPortfolio_Id(portfolioId);
     }
+
+    @jakarta.transaction.Transactional
+    public StockInvestment addInvestment(StockInvestment investment) {
+        return stockInvestmentRepository.save(investment);
+    }
+
+
 }
