@@ -74,7 +74,7 @@ public class DemoApplication {
            //this.exportPortfolioToJson(portfolioService);
 
 
-           //this.updatePortfolioMetrics(portfolioService);
+           this.updatePortfolioMetrics(portfolioService);
 
         };
     }

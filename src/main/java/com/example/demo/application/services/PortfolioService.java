@@ -166,6 +166,7 @@ public class PortfolioService {
 
         // ✅ Sort investments by `currentDatePrice` (oldest first) & get oldest 25
         List<StockInvestment> sortedInvestments = portfolio.getStockInvestments().stream()
+                .filter(investment -> !investment.isClosed())
                 .sorted(Comparator.comparing(StockInvestment::getCurrentDatePrice, Comparator.nullsLast(LocalDate::compareTo)))
                 .limit(25)
                 .toList();
