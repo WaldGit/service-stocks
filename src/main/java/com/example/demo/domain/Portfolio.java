@@ -25,6 +25,10 @@ public class Portfolio {
     @Transient
     private Double totalGainLoss;
 
+    @Transient
+    private Double totalPercentageGain;
+
+
     @OneToMany(mappedBy = "portfolio", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonManagedReference
     private List<StockInvestment> stockInvestments = new ArrayList<>();

@@ -25,6 +25,7 @@ public class PortfolioController {
 
     @GetMapping("/{id}/metrics")
     public Portfolio getPortfolioWithMetrics(@PathVariable UUID id) {
+        System.out.println("TESSTEN");
         return portfolioService.getPortfolioWithMetrics(id);
 
     }

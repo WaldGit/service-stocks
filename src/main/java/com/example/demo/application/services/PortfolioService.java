@@ -120,6 +120,12 @@ public class PortfolioService {
 
         portfolio.setTotalGainLoss(totalGainLoss); // ✅ Store total gain/loss
 
+        // ✅ Calculate total percentage gain
+        double totalPercentageGain = (totalPortfolioInvestment > 0) ?
+                (totalGainLoss / totalPortfolioInvestment) * 100 : 0.0;
+
+        portfolio.setTotalPercentageGain(totalPercentageGain); // ✅ Store in portfolio
+
         return portfolio;
     }
 
@@ -156,6 +162,31 @@ public class PortfolioService {
         // Return the updated metrics
         return new InvestmentMetricsDTO(returnPercentage, totalShares, averagePricePerShare, totalPrice, totalGainLoss,0);
     }
+
+    //update each investement check the tranches en check the date and the date now and get the dividends from the number of shares
+    //
+
+    @Transactional
+    public void updatePortfolioMetricsDividends(UUID portfolioId) {
+            Portfolio portfolio = portfolioRepository.findById(portfolioId)
+                .orElseThrow(() -> new RuntimeException("Portfolio not found"));
+
+
+        // ✅ Sort investments by `currentDatePrice` (oldest first) & get oldest 25
+        List<StockInvestment> sortedInvestments = portfolio.getStockInvestments().stream()
+                .filter(investment -> !investment.isClosed())
+                .sorted(Comparator.comparing(StockInvestment::getCurrentDatePrice, Comparator.nullsLast(LocalDate::compareTo)))
+                .limit(25)
+                .toList();
+
+        // ✅ Fetch latest stock prices and update database
+        for (StockInvestment investment : sortedInvestments) {
+            investment.getTranches().forEach(tranche -> {
+
+            });
+        }
+    }
+
 
     @Transactional
     public Portfolio updatePortfolioMetrics(UUID portfolioId) {

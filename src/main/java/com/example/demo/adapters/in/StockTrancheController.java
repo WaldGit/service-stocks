@@ -4,6 +4,7 @@ import com.example.demo.adapters.out.StockInvestmentRepository;
 import com.example.demo.application.services.StockTrancheService;
 import com.example.demo.domain.StockInvestment;
 import com.example.demo.domain.StockTranche;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import com.example.demo.dto.StockTrancheDTO;
 import com.example.demo.adapters.out.StockTrancheRepository;
 
+@Slf4j
 @RestController
 @RequestMapping("/api/stock-tranches")
 public class StockTrancheController {
@@ -40,6 +42,8 @@ public class StockTrancheController {
                 .purchaseDate(trancheDTO.getPurchaseDate())
                 .stock(stock)
                 .build();
+
+        System.out.println("TRANCHE " + tranche);
 
         StockTranche savedTranche = stockTrancheRepository.save(tranche);
         return ResponseEntity.ok(savedTranche);

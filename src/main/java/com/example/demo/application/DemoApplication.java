@@ -13,6 +13,7 @@ import com.example.demo.domain.StockTranche;
 import com.example.demo.domain.Portfolio;
 import com.example.demo.application.services.StockService;
 import com.example.demo.application.services.StockTrancheService;
+import com.example.demo.application.services.StockPriceService;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -67,17 +68,32 @@ public class DemoApplication {
 
 
     @org.springframework.context.annotation.Bean
-    public org.springframework.boot.CommandLineRunner run(StockService stockService, StockTrancheService stockTrancheService, PortfolioService portfolioService, com.fasterxml.jackson.databind.ObjectMapper objectMapper) {
+    public org.springframework.boot.CommandLineRunner run(StockService stockService, StockTrancheService stockTrancheService, PortfolioService portfolioService, com.fasterxml.jackson.databind.ObjectMapper objectMapper, StockPriceService stockPriceService ) {
         return args -> {
 
            //this.fetchFromFiles(portfolioService);
            //this.exportPortfolioToJson(portfolioService);
 
 
-           this.updatePortfolioMetrics(portfolioService);
+           //this.updatePortfolioMetrics(portfolioService);
 
+            this.getDividends(stockPriceService);
         };
     }
+
+    private void getDividends(StockPriceService stockPriceService ){
+        System.out.println("get Dividends...");
+
+
+
+
+        List<com.example.demo.domain.Dividend> ds = stockPriceService.getDividendData("BMY", "2022-01-01", "2022-12-31");
+        ds.forEach((d) -> {
+        System.out.println(d.getDate() + "-" + d.getAmount());
+
+        });
+
+        }
 
     private void updatePortfolioMetrics(PortfolioService portfolioService) {
         Portfolio portfolio = portfolioService.getPortfolioByName(TARGET_PORTFOLIO_NAME);
