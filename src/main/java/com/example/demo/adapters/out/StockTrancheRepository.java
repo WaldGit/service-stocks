@@ -6,6 +6,9 @@ import java.util.UUID;
 
 public interface StockTrancheRepository extends JpaRepository<StockTranche, UUID> {
     // Additional custom queries can be added if needed
+
+    // Find all tranches by StockInvestment ID
+    java.util.List<StockTranche> findByStock_Id(UUID stocktranchId);
 }
 
 

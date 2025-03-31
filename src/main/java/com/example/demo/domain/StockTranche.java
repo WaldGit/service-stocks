@@ -23,6 +23,8 @@ public class StockTranche {
     private LocalDate purchaseDate;
     private Double transactionCost;
     private Double percentageGain;
+    private Double dividends;
+    private Boolean dividendDone;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnore

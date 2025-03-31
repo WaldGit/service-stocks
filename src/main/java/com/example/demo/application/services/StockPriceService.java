@@ -43,6 +43,8 @@ public class StockPriceService {
                     .queryParam("apiKey", "gtJDsKY2TMiYhNiPhEzPgc5ftFZJqRzq")
                     .toUriString();
 
+        System.out.println("URL: " + url);
+
             Map<String, Object> response = restTemplate.getForObject(url, Map.class);
 
             java.util.List<Map<String, Object>> results = (java.util.List<Map<String, Object>>) response.get("results");

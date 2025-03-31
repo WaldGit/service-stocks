@@ -18,7 +18,7 @@ import com.example.demo.application.services.StockPriceService;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Optional;
+import java.util.concurrent.atomic.AtomicReference;
 
 @SpringBootApplication(scanBasePackages = "com.example")
 @EntityScan(basePackages = "com.example")
@@ -26,8 +26,8 @@ import java.util.Optional;
 
 public class DemoApplication {
 
-    private static final String TARGET_PORTFOLIO_NAME = "High Yield Portfolio"; // 🔄 Change this to the desired name
-    //private static final String TARGET_PORTFOLIO_NAME = "Dividend Growth Stock Portfolio"; // 🔄 Change this to the desired name
+    //private static final String TARGET_PORTFOLIO_NAME = "High Yield Portfolio"; // 🔄 Change this to the desired name
+    private static final String TARGET_PORTFOLIO_NAME = "Dividend Growth Stock Portfolio"; // 🔄 Change this to the desired name
 
 
     @org.springframework.beans.factory.annotation.Value("classpath:portfolio-high-yield_exported_portfolio.json")
@@ -77,21 +77,63 @@ public class DemoApplication {
 
            //this.updatePortfolioMetrics(portfolioService);
 
-            this.getDividends(stockPriceService);
+            //this.getDividends(stockPriceService,portfolioService,stockTrancheService);
         };
     }
 
-    private void getDividends(StockPriceService stockPriceService ){
+    private void getDividends(StockPriceService stockPriceService, PortfolioService portfolioService,StockTrancheService stockTrancheService){
         System.out.println("get Dividends...");
 
 
+        Portfolio portfolio = portfolioService.getPortfolioByName(TARGET_PORTFOLIO_NAME);
+        portfolio.getStockInvestments().forEach((s) -> {
+
+            stockTrancheService.getAllTranchesByStockId(s.getId()).forEach((t) -> {
+
+                if (Boolean.TRUE.equals(t.getDividendDone())) {
+                    return;
+                }
+                try{
+                System.out.println("processing " + s.getTicker() + " - " + t.getPurchaseDate());
+
+                    for (int i = 1; i <= 70; i++) {
+                        System.out.print("\rSleeping... " + i + " second(s)"); // Overwrites the line
+                        java.util.concurrent.TimeUnit.SECONDS.sleep(1);
+                    }
+
+                    List<com.example.demo.domain.Dividend> ds;
+                    if(s.isClosed()  == false){
+                        System.out.println("isClosed: " + s.isClosed() + "t.getPurchaseDate " + t.getPurchaseDate() + "-" + java.time.LocalDate.now());
+                        ds = stockPriceService.getDividendData(s.getTicker(), t.getPurchaseDate().format(java.time.format.DateTimeFormatter.ISO_DATE),
+                                java.time.LocalDate.now().format(java.time.format.DateTimeFormatter.ISO_DATE));// Convert purchase date to string
+                    } else {
+                        System.out.println("isClosed: " + s.isClosed() + "t.getPurchaseDate " + t.getPurchaseDate() + "-" +s.getClosedDate());
+
+                        ds = stockPriceService.getDividendData(s.getTicker(), t.getPurchaseDate().format(java.time.format.DateTimeFormatter.ISO_DATE),s.getClosedDate().format(java.time.format.DateTimeFormatter.ISO_DATE));
+                    }
+
+                        AtomicReference<Double> total = new AtomicReference<>((double) 0);
+                ds.forEach((d) -> {
+                    System.out.println(d.getDate() + "-" + d.getAmount());
+                    total.updateAndGet(v -> new Double((double) (v + Double.parseDouble(d.getAmount()))));
+                });
+
+                t.setDividends(total.get()*t.getQuantity());
+                t.setDividendDone(true);
+                    System.out.println("total: " + t.getDividends() + " for " + t.getQuantity() + " shares");
+
+                stockTrancheService.save(t);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt(); // Restore interrupted state
+                    System.out.println("Sleep interrupted: " + e.getMessage());
+                }
+            });
 
 
-        List<com.example.demo.domain.Dividend> ds = stockPriceService.getDividendData("BMY", "2022-01-01", "2022-12-31");
-        ds.forEach((d) -> {
-        System.out.println(d.getDate() + "-" + d.getAmount());
 
         });
+
+
 
         }
 
