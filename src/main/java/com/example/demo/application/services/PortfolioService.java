@@ -97,11 +97,21 @@ public class PortfolioService {
 
         double totalPortfolioInvestment = 0.0;
 
-        // First, calculate the total portfolio investment
+        // First, calculate the total portfolio investment and dividends per investment
         for (StockInvestment investment : portfolio.getStockInvestments()) {
             InvestmentMetricsDTO metrics = calculateInvestmentMetrics(investment);
             investment.setMetrics(metrics);
             totalPortfolioInvestment += metrics.getTotalPrice(); // Sum total invested amount
+
+            // ✅ Calculate total dividends received for this investment (sum of tranche dividends)
+            double totalDividends = investment.getTranches().stream()
+                    .filter(tranche -> tranche.getDividends() != null) // ✅ Ensure no null values
+                    .mapToDouble(StockTranche::getDividends) // ✅ Extract and sum dividends
+                    .sum();
+
+            metrics.setTotalDividends(totalDividends); // Store in metrics
+
+            //totalPortfolioDividends += totalDividends; // Sum up for the entire portfolio
         }
 
         double totalGainLoss = 0.0;
@@ -126,8 +136,10 @@ public class PortfolioService {
 
         portfolio.setTotalPercentageGain(totalPercentageGain); // ✅ Store in portfolio
 
+
         return portfolio;
     }
+
 
 
     public InvestmentMetricsDTO calculateInvestmentMetrics(StockInvestment investment) {
@@ -160,7 +172,7 @@ public class PortfolioService {
         double averagePricePerShare = (totalShares == 0) ? 0.0 : totalPrice / totalShares;
 
         // Return the updated metrics
-        return new InvestmentMetricsDTO(returnPercentage, totalShares, averagePricePerShare, totalPrice, totalGainLoss,0);
+        return new InvestmentMetricsDTO(returnPercentage, totalShares, averagePricePerShare, totalPrice, totalGainLoss,0,0);
     }
 
     //update each investement check the tranches en check the date and the date now and get the dividends from the number of shares

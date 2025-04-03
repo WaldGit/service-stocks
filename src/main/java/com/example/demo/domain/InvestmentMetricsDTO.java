@@ -10,4 +10,5 @@ public class InvestmentMetricsDTO {
     private double totalPrice;
     private double totalGainLoss;
     private double allocationPercentage;
+    private double totalDividends;
 }
