@@ -206,21 +206,38 @@ public class PortfolioService {
                 .orElseThrow(() -> new RuntimeException("Portfolio not found"));
 
         double totalPortfolioInvestment = 0.0;
+        LocalDate today = LocalDate.now();
+        LocalDate yesterday = today.minusDays(1);
+        // Define the desired format
+        java.time.format.DateTimeFormatter formatter = java.time.format.DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+        // Format the date
+        String formattedYesterday = yesterday.format(formatter);
+
+
 
         // ✅ Sort investments by `currentDatePrice` (oldest first) & get oldest 25
         List<StockInvestment> sortedInvestments = portfolio.getStockInvestments().stream()
                 .filter(investment -> !investment.isClosed())
                 .sorted(Comparator.comparing(StockInvestment::getCurrentDatePrice, Comparator.nullsLast(LocalDate::compareTo)))
-                .limit(25)
                 .toList();
 
         // ✅ Fetch latest stock prices and update database
         for (StockInvestment investment : sortedInvestments) {
-            StockPriceDTO stockPrice = stockPriceService.getLatestStockPrice(investment.getTicker());
-            if (stockPrice != null) {
-                investment.setCurrentPrice(stockPrice.getPrice());
-                investment.setCurrentDatePrice(stockPrice.getDate());
+             Double d =stockPriceService.getLatestPrice(investment.getTicker(), formattedYesterday);
+             System.out.println(investment.getTicker() + " " + d);
+
+            try {
+                Thread.sleep(15000); // 10,000 milliseconds = 10 seconds
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt(); // good practice
+                System.out.println("Sleep interrupted");
             }
+            //StockPriceDTO stockPrice = stockPriceService.getLatestStockPrice(investment.getTicker());
+
+                investment.setCurrentPrice(d);
+                investment.setCurrentDatePrice(yesterday);
+
         }
 
         // ✅ Recalculate investment metrics & update allocations

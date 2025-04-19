@@ -6,7 +6,7 @@ import org.springframework.web.client.RestTemplate;
 import com.example.demo.domain.AlphaVantageResponse;
 import com.example.demo.domain.StockPriceDTO;
 import com.example.demo.domain.AlphaVantageData;
-
+import com.example.demo.domain.LastTradeResponse;
 import java.util.Iterator;
 import java.util.Map;
 
@@ -56,6 +56,13 @@ public class StockPriceService {
                     ))
                     .collect(java.util.stream.Collectors.toList());
         }
+
+    public Double getLatestPrice(String ticker, String date) {
+        String url = "https://api.polygon.io/v1/open-close/" + ticker + "/"+ date + "?adjusted=true&apiKey=gtJDsKY2TMiYhNiPhEzPgc5ftFZJqRzq";
+        System.out.println(url);
+        LastTradeResponse response = restTemplate.getForObject(url, LastTradeResponse.class);
+        return response.getClose();
+    }
 
     public StockPriceDTO getLatestStockPrice(String symbol) {
         try {

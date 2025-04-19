@@ -26,8 +26,8 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public class DemoApplication {
 
-    private static final String TARGET_PORTFOLIO_NAME = "High Yield Portfolio"; // 🔄 Change this to the desired name
-    //private static final String TARGET_PORTFOLIO_NAME = "Dividend Growth Stock Portfolio"; // 🔄 Change this to the desired name
+    //private static final String TARGET_PORTFOLIO_NAME = "High Yield Portfolio"; // 🔄 Change this to the desired name
+    private static final String TARGET_PORTFOLIO_NAME = "Dividend Growth Stock Portfolio"; // 🔄 Change this to the desired name
 
     public static void main(String[] args) {
 
@@ -41,7 +41,7 @@ public class DemoApplication {
            //ExportIn.importFetchFromFiles(portfolioService);
            //ExportIn.exportPortfolioToJson(portfolioService,TARGET_PORTFOLIO_NAME);
 
-           //this.updatePortfolioMetrics(portfolioService);
+           this.updatePortfolioMetrics(portfolioService,stockPriceService);
            // this.getDividends(stockPriceService,portfolioService,stockTrancheService);
         };
     }
@@ -102,11 +102,14 @@ public class DemoApplication {
 
         }
 
-    private void updatePortfolioMetrics(PortfolioService portfolioService) {
+    private void updatePortfolioMetrics(PortfolioService portfolioService,StockPriceService  stockPriceService) {
         Portfolio portfolio = portfolioService.getPortfolioByName(TARGET_PORTFOLIO_NAME);
         System.out.println("Found portfolio: " + portfolio);
         portfolioService.updatePortfolioMetrics(portfolio.getId());
+
+        //Double d =stockPriceService.getLatestPrice("AAPL", "2025-04-15");
         System.out.println("Done updating portfolio metrics..");
+        //System.out.println(d);
 
     }
 
