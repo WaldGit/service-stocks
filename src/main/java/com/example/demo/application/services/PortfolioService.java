@@ -25,20 +25,13 @@ import com.example.demo.adapters.out.persistence.StockInvestmentRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Service
+@lombok.RequiredArgsConstructor
 public class PortfolioService {
 
     private final PortfolioRepository portfolioRepository;
     private final StockInvestmentRepository stockInvestmentRepository;
     private final StockPriceService stockPriceService;
     private final ObjectMapper objectMapper; // ✅ JSON Mapper
-
-    @Autowired
-    public PortfolioService(PortfolioRepository portfolioRepository,StockInvestmentRepository stockInvestmentRepository,StockPriceService stockPriceService,ObjectMapper objectMapper) {
-        this.portfolioRepository = portfolioRepository;
-        this.stockInvestmentRepository = stockInvestmentRepository;
-        this.stockPriceService =stockPriceService;
-        this.objectMapper = objectMapper;
-    }
 
 
     public Portfolio save(Portfolio portfolio) {
@@ -241,8 +234,8 @@ public class PortfolioService {
 
             System.out.println("Investment " + index + " " + sortedInvestments.size());
 
-             Double d =stockPriceService.getLatestPrice(investment.getTicker(), formattedYesterday);
-             System.out.println(investment.getTicker() + " " + d);
+             Double d =stockPriceService.getLatestPrice(investment.getStock().getName(), formattedYesterday);
+             System.out.println(investment.getStock().getName() + " " + d);
 
             try {
                 Thread.sleep(15000); // 10,000 milliseconds = 10 seconds

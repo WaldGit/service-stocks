@@ -1,5 +1,6 @@
 package com.example.demo.infrastructure.adapters.in;
 
+import com.example.demo.adapters.out.persistence.StockRepository;
 import com.example.demo.application.ports.out.PortfolioRepository;
 import com.example.demo.domain.StockInvestment;
 import com.example.demo.application.services.StockService; // Add this import statemen
@@ -12,11 +13,13 @@ import java.util.Optional;
 @RequestMapping("/api/stocksInvestments")
 public class StockController {
     private final StockService stockService;
+    private final StockRepository stockRepository;
     private final com.example.demo.application.ports.out.PortfolioRepository portfolioRepository;
 
-    public StockController(StockService stockService, PortfolioRepository PortfolioRepository) {
+    public StockController(StockService stockService, PortfolioRepository PortfolioRepository, StockRepository stockRepository) {
         this.stockService = stockService;
         this.portfolioRepository = PortfolioRepository;
+        this.stockRepository = stockRepository;
     }
 
 
@@ -35,6 +38,10 @@ public class StockController {
 
         // Set the portfolio for the investment before saving
         investment.setPortfolio(portfolio);
+
+        com.example.demo.domain.Stock stock = stockRepository.save(investment.getStock()); // save Stock first
+        investment.setStock(stock);
+
 
         // Save the investment
         StockInvestment savedInvestment = stockService.save(investment);

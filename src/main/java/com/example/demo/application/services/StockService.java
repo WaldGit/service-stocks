@@ -52,11 +52,11 @@ public class StockService {
         stockInvestmentRepository.deleteById(id);
     }
 
-    public StockInvestment findByTicker(String ticker) {
+    /*public StockInvestment findByTicker(String ticker) {
         // Use the repository to find a stock by its ticker
         return stockInvestmentRepository.findByTicker(ticker)
                 .orElseThrow(() -> new IllegalArgumentException("Stock with ticker " + ticker + " not found."));
-    }
+    }*/
 
 
 }

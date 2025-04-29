@@ -9,7 +9,7 @@ import java.util.UUID;
 
 public interface StockInvestmentRepository extends JpaRepository<StockInvestment, UUID> {
         // Additional custom queries can be added if needed
-        java.util.Optional<StockInvestment> findByTicker(String ticker);
+        //java.util.Optional<StockInvestment> findByTicker(String ticker);
 
                  List<StockInvestment> findByPortfolio_Id(UUID portfolioId);
 

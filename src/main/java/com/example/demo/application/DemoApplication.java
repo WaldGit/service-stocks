@@ -61,7 +61,7 @@ public class DemoApplication {
                     return;
                 }
 
-                System.out.println("processing " + s.getTicker() + " - " + t.getPurchaseDate());
+                System.out.println("processing " + s.getStock().getName() + " - " + t.getPurchaseDate());
 
                    try {
                         Thread.sleep(15000); // 10,000 milliseconds = 10 seconds
@@ -75,12 +75,12 @@ public class DemoApplication {
                     List<com.example.demo.domain.Dividend> ds;
                     if(s.isClosed()  == false){
                         System.out.println("isClosed: " + s.isClosed() + "t.getPurchaseDate " + t.getPurchaseDate() + "-" + java.time.LocalDate.now());
-                        ds = stockPriceService.getDividendData(s.getTicker(), t.getPurchaseDate().format(java.time.format.DateTimeFormatter.ISO_DATE),
+                        ds = stockPriceService.getDividendData(s.getStock().getName(), t.getPurchaseDate().format(java.time.format.DateTimeFormatter.ISO_DATE),
                                 java.time.LocalDate.now().format(java.time.format.DateTimeFormatter.ISO_DATE));// Convert purchase date to string
                     } else {
                         System.out.println("isClosed: " + s.isClosed() + "t.getPurchaseDate " + t.getPurchaseDate() + "-" +s.getClosedDate());
 
-                        ds = stockPriceService.getDividendData(s.getTicker(), t.getPurchaseDate().format(java.time.format.DateTimeFormatter.ISO_DATE),s.getClosedDate().format(java.time.format.DateTimeFormatter.ISO_DATE));
+                        ds = stockPriceService.getDividendData(s.getStock().getName(), t.getPurchaseDate().format(java.time.format.DateTimeFormatter.ISO_DATE),s.getClosedDate().format(java.time.format.DateTimeFormatter.ISO_DATE));
                     }
 
                         AtomicReference<Double> total = new AtomicReference<>((double) 0);

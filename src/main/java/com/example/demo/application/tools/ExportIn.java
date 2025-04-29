@@ -105,7 +105,7 @@ public class ExportIn
         for (StockInvestment originalInvestment : originalPortfolio.getStockInvestments()) {
             StockInvestment clonedInvestment = new StockInvestment();
             clonedInvestment.setPortfolio(clonedPortfolio); // ✅ Associate with cloned portfolio
-            clonedInvestment.setTicker(originalInvestment.getTicker());
+            clonedInvestment.setStock(originalInvestment.getStock());
             clonedInvestment.setCurrentPrice(originalInvestment.getCurrentPrice());
             clonedInvestment.setClosed(originalInvestment.isClosed());
             clonedInvestment.setClosedDate(originalInvestment.getClosedDate());

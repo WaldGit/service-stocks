@@ -24,7 +24,6 @@ public class StockInvestment {
     @GeneratedValue(strategy = GenerationType.UUID) // ✅ Correct way to handle UUID in Hibernate 6+
     private UUID id;
 
-    private String ticker;
     private Double currentPrice;
     private LocalDate currentDatePrice;
 
@@ -42,11 +41,15 @@ public class StockInvestment {
     @OneToMany(mappedBy = "stock", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
     private List<StockTranche> tranches = new ArrayList<>(); // ✅ Initialize to avoid NullPointerException
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "stock_id", nullable = false)
+    private Stock stock;
+
     @Override
     public String toString() {
         return "StockInvestment{" +
                 "id=" + id +
-                ", ticker='" + ticker + '\'' +
+                ", stock ='" + stock.getName() + '\'' +
                 ", currentPrice=" + currentPrice +
                 ", closed=" + closed +
                 ", closedDate=" + closedDate +
