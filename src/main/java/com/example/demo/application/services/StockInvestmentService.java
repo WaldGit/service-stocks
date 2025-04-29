@@ -1,4 +1,4 @@
-import com.example.demo.adapters.out.StockInvestmentRepository;
+import com.example.demo.adapters.out.persistence.StockInvestmentRepository;
 import com.example.demo.domain.StockInvestment;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

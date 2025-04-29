@@ -58,10 +58,17 @@ public class StockPriceService {
         }
 
     public Double getLatestPrice(String ticker, String date) {
-        String url = "https://api.polygon.io/v1/open-close/" + ticker + "/"+ date + "?adjusted=true&apiKey=gtJDsKY2TMiYhNiPhEzPgc5ftFZJqRzq";
+        try {
+
+            String url = "https://api.polygon.io/v1/open-close/" + ticker + "/"+ date + "?adjusted=true&apiKey=gtJDsKY2TMiYhNiPhEzPgc5ftFZJqRzq";
         System.out.println(url);
         LastTradeResponse response = restTemplate.getForObject(url, LastTradeResponse.class);
         return response.getClose();
+
+        } catch (Exception e) {
+            System.err.println("❌ Error fetching stock price for " + ticker + ": " + e.getMessage());
+        }
+        return null;
     }
 
     public StockPriceDTO getLatestStockPrice(String symbol) {

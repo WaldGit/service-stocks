@@ -26,8 +26,8 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public class DemoApplication {
 
-    //private static final String TARGET_PORTFOLIO_NAME = "High Yield Portfolio"; // 🔄 Change this to the desired name
-    private static final String TARGET_PORTFOLIO_NAME = "Dividend Growth Stock Portfolio"; // 🔄 Change this to the desired name
+    private static final String TARGET_PORTFOLIO_NAME = "High Yield Portfolio"; // 🔄 Change this to the desired name
+    //private static final String TARGET_PORTFOLIO_NAME = "Dividend Growth Stock Portfolio"; // 🔄 Change this to the desired name
 
     public static void main(String[] args) {
 
@@ -38,11 +38,13 @@ public class DemoApplication {
     public org.springframework.boot.CommandLineRunner run(StockService stockService, StockTrancheService stockTrancheService, PortfolioService portfolioService, com.fasterxml.jackson.databind.ObjectMapper objectMapper, StockPriceService stockPriceService ) {
         return args -> {
 
+            System.out.println(TARGET_PORTFOLIO_NAME);
+
            //ExportIn.importFetchFromFiles(portfolioService);
            //ExportIn.exportPortfolioToJson(portfolioService,TARGET_PORTFOLIO_NAME);
 
-           this.updatePortfolioMetrics(portfolioService,stockPriceService);
-           // this.getDividends(stockPriceService,portfolioService,stockTrancheService);
+           //this.updatePortfolioMetrics(portfolioService,stockPriceService);
+            //this.getDividends(stockPriceService,portfolioService,stockTrancheService);
         };
     }
 
@@ -58,13 +60,17 @@ public class DemoApplication {
                 if (Boolean.TRUE.equals(t.getDividendDone())) {
                     return;
                 }
-                try{
+
                 System.out.println("processing " + s.getTicker() + " - " + t.getPurchaseDate());
 
-                    for (int i = 1; i <= 70; i++) {
-                        System.out.print("\rSleeping... " + i + " second(s)"); // Overwrites the line
-                        java.util.concurrent.TimeUnit.SECONDS.sleep(1);
+                   try {
+                        Thread.sleep(15000); // 10,000 milliseconds = 10 seconds
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt(); // good practice
+                        System.out.println("Sleep interrupted");
                     }
+
+                   System.out.println("Process dividends...");
 
                     List<com.example.demo.domain.Dividend> ds;
                     if(s.isClosed()  == false){
@@ -88,10 +94,7 @@ public class DemoApplication {
                     System.out.println("total: " + t.getDividends() + " for " + t.getQuantity() + " shares");
 
                 stockTrancheService.save(t);
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt(); // Restore interrupted state
-                    System.out.println("Sleep interrupted: " + e.getMessage());
-                }
+
             });
 
 
@@ -106,11 +109,9 @@ public class DemoApplication {
         Portfolio portfolio = portfolioService.getPortfolioByName(TARGET_PORTFOLIO_NAME);
         System.out.println("Found portfolio: " + portfolio);
         portfolioService.updatePortfolioMetrics(portfolio.getId());
-
-        //Double d =stockPriceService.getLatestPrice("AAPL", "2025-04-15");
         System.out.println("Done updating portfolio metrics..");
-        //System.out.println(d);
 
+        //stockPriceService.getLatestPrice("KM", "2025-04-25");
     }
 
 

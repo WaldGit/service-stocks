@@ -1,16 +1,15 @@
-package com.example.demo.adapters.in;
+package com.example.demo.infrastructure.adapters.in;
 
-import com.example.demo.adapters.out.StockInvestmentRepository;
+import com.example.demo.adapters.out.persistence.StockInvestmentRepository;
 import com.example.demo.application.services.StockTrancheService;
 import com.example.demo.domain.StockInvestment;
 import com.example.demo.domain.StockTranche;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.example.demo.dto.StockTrancheDTO;
-import com.example.demo.adapters.out.StockTrancheRepository;
+import com.example.demo.adapters.out.persistence.StockTrancheRepository;
 
 @Slf4j
 @RestController

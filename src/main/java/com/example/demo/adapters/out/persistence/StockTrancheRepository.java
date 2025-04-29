@@ -1,4 +1,4 @@
-package com.example.demo.adapters.out;
+package com.example.demo.adapters.out.persistence;
 
 import com.example.demo.domain.StockTranche;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -1,4 +1,6 @@
-package com.example.demo.adapters.in;
+package com.example.demo.infrastructure.adapters.in;
+
+import com.example.demo.application.ports.out.PortfolioRepository;
 import com.example.demo.domain.StockInvestment;
 import com.example.demo.application.services.StockService; // Add this import statemen
 import org.springframework.web.bind.annotation.*;
@@ -10,9 +12,9 @@ import java.util.Optional;
 @RequestMapping("/api/stocksInvestments")
 public class StockController {
     private final StockService stockService;
-    private final com.example.demo.adapters.out.PortfolioRepository portfolioRepository;
+    private final com.example.demo.application.ports.out.PortfolioRepository portfolioRepository;
 
-    public StockController(StockService stockService, com.example.demo.adapters.out.PortfolioRepository PortfolioRepository) {
+    public StockController(StockService stockService, PortfolioRepository PortfolioRepository) {
         this.stockService = stockService;
         this.portfolioRepository = PortfolioRepository;
     }

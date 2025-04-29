@@ -1,4 +1,4 @@
-package com.example.demo.adapters.in;
+package com.example.demo.infrastructure.adapters.in;
 
 import com.example.demo.application.services.PortfolioService;
 import com.example.demo.domain.Portfolio;

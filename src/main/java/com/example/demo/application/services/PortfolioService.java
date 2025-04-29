@@ -1,6 +1,6 @@
 package com.example.demo.application.services;
 
-import com.example.demo.adapters.out.PortfolioRepository;
+import com.example.demo.application.ports.out.PortfolioRepository;
 import com.example.demo.domain.InvestmentMetricsDTO;
 import com.example.demo.domain.Portfolio;
 import com.example.demo.domain.StockInvestment;
@@ -8,7 +8,8 @@ import com.example.demo.domain.StockTranche;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import com.example.demo.domain.StockPriceDTO;
+
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 
 import java.util.List;
@@ -17,11 +18,9 @@ import java.util.UUID;
 import java.util.Comparator;
 import java.io.File;
 import java.io.IOException;
-import java.util.Optional;
 
 
-import com.example.demo.application.services.StockPriceService;
-import com.example.demo.adapters.out.StockInvestmentRepository;
+import com.example.demo.adapters.out.persistence.StockInvestmentRepository;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -199,6 +198,18 @@ public class PortfolioService {
         }
     }
 
+    public static LocalDate previousBusinessDay(LocalDate date) {
+        LocalDate prev = date.minusDays(1);
+        DayOfWeek dow = prev.getDayOfWeek();
+        if (dow == DayOfWeek.SATURDAY) {
+            // If it lands on Saturday, go back 1 more day → Friday
+            prev = prev.minusDays(1);
+        } else if (dow == DayOfWeek.SUNDAY) {
+            // If it lands on Sunday, go back 2 more days → Friday
+            prev = prev.minusDays(2);
+        }
+        return prev;
+    }
 
     @Transactional
     public Portfolio updatePortfolioMetrics(UUID portfolioId) {
@@ -207,12 +218,14 @@ public class PortfolioService {
 
         double totalPortfolioInvestment = 0.0;
         LocalDate today = LocalDate.now();
-        LocalDate yesterday = today.minusDays(1);
+
+        LocalDate yesterday = this.previousBusinessDay(today);
         // Define the desired format
         java.time.format.DateTimeFormatter formatter = java.time.format.DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
         // Format the date
         String formattedYesterday = yesterday.format(formatter);
+        System.out.println("formattedYesterday "+ formattedYesterday);
 
 
 
@@ -222,8 +235,12 @@ public class PortfolioService {
                 .sorted(Comparator.comparing(StockInvestment::getCurrentDatePrice, Comparator.nullsLast(LocalDate::compareTo)))
                 .toList();
 
+        int index = 0;
         // ✅ Fetch latest stock prices and update database
         for (StockInvestment investment : sortedInvestments) {
+
+            System.out.println("Investment " + index + " " + sortedInvestments.size());
+
              Double d =stockPriceService.getLatestPrice(investment.getTicker(), formattedYesterday);
              System.out.println(investment.getTicker() + " " + d);
 
@@ -235,8 +252,14 @@ public class PortfolioService {
             }
             //StockPriceDTO stockPrice = stockPriceService.getLatestStockPrice(investment.getTicker());
 
-                investment.setCurrentPrice(d);
-                investment.setCurrentDatePrice(yesterday);
+                if(d != null)  {
+                    System.out.println("THERE IS A DATE :");
+                    investment.setCurrentPrice(d);
+                    investment.setCurrentDatePrice(yesterday);
+
+                }
+
+                index += 1;
 
         }
 

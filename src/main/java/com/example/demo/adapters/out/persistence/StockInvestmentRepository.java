@@ -1,5 +1,5 @@
 
-package com.example.demo.adapters.out;
+package com.example.demo.adapters.out.persistence;
 
 import com.example.demo.domain.StockInvestment;
 import org.springframework.data.jpa.repository.JpaRepository;
