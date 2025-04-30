@@ -13,6 +13,7 @@ public interface StockInvestmentRepository extends JpaRepository<StockInvestment
 
                  List<StockInvestment> findByPortfolio_Id(UUID portfolioId);
 
+        boolean existsByPortfolioAndStock(com.example.demo.domain.Portfolio portfolio, com.example.demo.domain.Stock stock);
 
 }
 
